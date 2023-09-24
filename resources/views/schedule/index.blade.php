@@ -43,7 +43,7 @@
                         {{-- ce formulaire est utilisé pour envoyer une requête de suppression
                                  à une route spécifique dans Laravel en utilisant la méthode DELETE.
                         Le paramètre $schedule est utilisé pour identifier l'élément à supprimer --}}
-                        <button type="submit" onclick="return confirm ('etes-vous sûr ?')" class="rounded-2xl bg-red-200  shadow-xl text-sm text-black py-2 px-3 hover:bg-gray-200 hover:text-black-800 cursor-pointer transition-all duration-200">supprimer</button>
+                        <button type="submit" onclick="return confirm ('etes-vous sûr ?')" class="rounded-2xl bg-red-400  shadow-xl text-sm text-black py-2 px-3 hover:bg-gray-200 hover:text-black-800 cursor-pointer transition-all duration-200">supprimer</button>
                     </form>
                     </td>
                 </tr>

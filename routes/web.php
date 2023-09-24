@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\HolidaysController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\ScheduleController;
@@ -36,3 +37,5 @@ Route::middleware([
     Route::resource('schedule', ScheduleController::class);
     Route::resource('season', SeasonController::class);
 });
+
+Route::get('/accueil', [FrontController::class, 'accueil'])->name('sqf.accueil');
