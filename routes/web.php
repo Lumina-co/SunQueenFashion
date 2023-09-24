@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\HolidaysController;
+use App\Http\Controllers\PriceController;
+use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\SeasonController;
+use App\Models\Price;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +30,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::resource('holidays', HolidaysController::class);
+    Route::resource('price', PriceController::class);
+    Route::resource('schedule', ScheduleController::class);
+    Route::resource('season', SeasonController::class);
 });

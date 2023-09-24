@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('schedules', function (Blueprint $table) {
+        Schema::create('seasons', function (Blueprint $table) {
             $table->id();
-            $table->string('jour');
-            $table->time("heure d'ouverture");
-            $table->time('heure de fermeture');
-            $table->foreignId('seasons_id');
+            $table->string('nom');
+            $table->dateTime('date_début');
+            $table->dateTime('date_fin');
+            $table->Timestamps();
         });
     }
 
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('schedules');
+        Schema::dropIfExists('seasons');
     }
 };
