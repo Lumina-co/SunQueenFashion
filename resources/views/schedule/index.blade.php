@@ -13,8 +13,10 @@
                 <tr>
                     <th scope="col" class="px-6 py-3">id</th>
                     <th scope="col" class="px-6 py-3">jour</th>
-                    <th scope="col" class="px-6 py-3">heure d'ouverture</th>
-                    <th scope="col" class="px-6 py-3">heure de fermeture</th>
+                    <th scope="col" class="px-6 py-3">heure d'ouverture du matin</th>
+                    <th scope="col" class="px-6 py-3">heure de fermeture du matin</th>
+                    <th scope="col" class="px-6 py-3">heure d'ouverture après-midi</th>
+                    <th scope="col" class="px-6 py-3">heure de fermeture après-midi</th>
                     <div class="mb-3">
                         <label for="saison" class="form-label">Saison :</label>
                         <select class="form-select" id="saison">
@@ -32,8 +34,10 @@
                         {{ $schedule->id }}
                     </th>
                     <td class="px-6 py-4 bg-blue-200">{{ $schedule->jour }}</td>
-                    <td class="px-6 py-4 bg-yellow-200"> {{ $schedule->heure_ouverture }}</td>
-                    <td class="px-6 py-4 bg-orange-200">{{ $schedule->heure_fermeture }}</td>
+                    <td class="px-6 py-4 bg-yellow-200"> {{ $schedule->heure_ouverture_am }}</td>
+                    <td class="px-6 py-4 bg-orange-200">{{ $schedule->heure_fermeture_am }}</td>
+                    <td class="px-6 py-4 bg-yellow-200"> {{ $schedule->heure_ouverture_pm }}</td>
+                    <td class="px-6 py-4 bg-orange-200">{{ $schedule->heure_fermeture_pm }}</td>
 
                     <td class="px-6 py-4 flex items-center gap-2">
                     <a href="{{ route('schedule.edit', $schedule) }}" class="rounded-2xl bg-red-200 text-sm text-black py-2 px-3 hover:bg-gray-200 hover:text-black-800 shadow-xl cursor-pointer transition-all duration-200">modifier</a>

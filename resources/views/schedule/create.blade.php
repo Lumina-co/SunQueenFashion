@@ -21,25 +21,28 @@
                     type="text" id="jour" name="jour" required size="8">
             </div>
             <div class="py-4">
-                <label class="font-semibold text-gray-500" for="heure_ouverture">heure d'ouverture</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2"
-                    type="text" id="heure_ouverture" name="heure_ouverture">
+                <label class="font-semibold text-gray-500" for="heure_ouverture_am">heure d'ouverture matin</label>
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="heure_ouverture_am" name="heure_ouverture_am"
+            </div>
+            <div class="py-4">
+                <label class="font-semibold text-gray-500" for="heure_fermeture_am">heure de fermeture matin</label>
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="heure_fermeture_am" name="heure_fermeture_am"
+            </div>
+            <div class="py-4">
+                <label class="font-semibold text-gray-500" for="heure_ouverture_pm">heure d'ouverture aprés midi</label>
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="heure_ouverture_pm" name="heure_ouverture_pm"
+            </div>
+            <div class="py-4">
+                <label class="font-semibold text-gray-500" for="heure_fermeture_pm">heure de fermeture aprés midi</label>
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="heure_fermeture_pm" name="heure_fermeture_pm"
             </div>
 
-            <div class="py-4">
-                <label class="font-semibold text-gray-500" for="heure_fermeture">heure de fermeture</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2"
-                    type="text" id="heure_fermeture" name="heure_fermeture">
-            </div>
-
-            <div class="py-4">
-                <label class="font-semibold text-gray-500" for="season">horaire d'été</label>
-                <input type="checkbox" id="season" name="season">
-            </div>
-
-            <div class="py-4">
-                <label class="font-semibold text-gray-500" for="season">horaire d'hiver</label>
-                <input type="checkbox" id="season" name="season">
+            <div class="mb-3">
+                <label for="saison" class="form-label">Saison :</label>
+                <select class="form-select" id="saison">
+                    <option value="ete">Été</option>
+                    <option value="hiver">Hiver</option>
+                </select>
             </div>
 
             <div class="flex justify-center">
