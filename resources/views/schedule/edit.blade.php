@@ -19,23 +19,23 @@
 
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="jour">jour</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="jour" name="jour" value="{{ $schedule->jour}}">
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="day" name="day" value="{{ $schedule->day}}">
             </div>
             <div class="py-4">
-                <label class="font-semibold text-gray-500" for="heure_ouverture_am">heure d'ouverture matin</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="heure_ouverture_am" name="heure_ouverture_am" value="{{ $schedule->heure_ouverture_am }}">
+                <label class="font-semibold text-gray-500" for="opening_am">heure d'ouverture matin</label>
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="opening_am" name="opening_am" value="{{ $schedule->opening_am }}">
             </div>
             <div class="py-4">
-                <label class="font-semibold text-gray-500" for="heure_fermeture_am">heure de fermeture matin</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="heure_fermeture_am" name="heure_fermeture_am" value="{{ $schedule->heure_fermeture_am }}">
+                <label class="font-semibold text-gray-500" for="closing_am">heure de fermeture matin</label>
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="closing_am" name="closing_am" value="{{ $schedule->closing_am }}">
             </div>
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="heure_ouverture_pm">heure d'ouverture aprés midi</label>
                 <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="heure_ouverture_pm" name="heure_ouverture_pm" value="{{ $schedule->heure_ouverture_pm }}">
             </div>
             <div class="py-4">
-                <label class="font-semibold text-gray-500" for="heure_fermeture_pm">heure de fermeture aprés midi</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="heure_fermeture_pm" name="heure_fermeture_pm" value="{{ $schedule->heure_fermeture_pm }}">
+                <label class="font-semibold text-gray-500" for="closing_pm">heure de fermeture aprés midi</label>
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="closing_pm" name="closing_pm" value="{{ $schedule->closing_pm }}">
             </div>
             <div class="mb-3">
                 <label for="saison" class="form-label">Saison :</label>

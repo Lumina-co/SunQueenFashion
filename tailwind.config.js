@@ -22,6 +22,7 @@ export default {
                 'black': '#050304',
                 'dune': '#D5C0A3',
                 'white': '#F6F6F6',
+                'pink' : 'F24C3D',
 
             },
         },

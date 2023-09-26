@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('jour');
-            $table->time('heure_ouverture_am')->nullable();
-            $table->time('heure_fermeture_am')->nullable();
-            $table->time('heure_ouverture_pm')->nullable();
-            $table->time('heure_fermeture_pm')->nullable();
+            $table->string('day');
+            $table->time('opening_am')->nullable();
+            $table->time('closing_am')->nullable();
+            $table->time('opening_pm')->nullable();
+            $table->time('closing_pm')->nullable();
             $table->foreignId('season_id')->default(0);
             $table->timestamps();
         });

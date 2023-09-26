@@ -15,22 +15,22 @@ class SeasonSeeder extends Seeder
     public function run(): void
     {
         Season::create([
-            'nom' => 'hivers',
+            'nom' => 'Hivers',
             'date_début' => '2023-12-22',
             'date_fin' => "2023-03-19"
         ]);
         Season::create([
-            'nom' => 'printemps',
+            'nom' => 'Printemps',
             'date_début' => '2023-03-20',
             'date_fin' => "2023-06-19"
         ]);
         Season::create([
-            'nom' => 'été',
+            'nom' => 'Eté',
             'date_début' => '2023-06-20',
             'date_fin' => "2023-09-21"
         ]);
         Season::create([
-            'nom' => 'automne',
+            'nom' => 'Automne',
             'date_début' => '2023-09-22',
             'date_fin' => "2023-12-21"
         ]);

@@ -18,6 +18,7 @@
     @livewireStyles
 </head>
 <body class="w-full">
+    <div class=" border-[46px] border-black">
     {{-- menu --}}
     <header>
         <nav class=" flex justify-between bg-black shadow-lg">
@@ -152,6 +153,7 @@
                     </li>
                 </ul>
             </div>
+        </div>
         </div>
     </footer>
     @livewireScripts

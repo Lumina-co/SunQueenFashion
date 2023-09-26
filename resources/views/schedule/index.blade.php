@@ -4,7 +4,7 @@
             Gestion des horaires
         </h2>
 
-        <a href="{{ route('schedule.create') }}" class="border bg-red-400 text-black-400 rounded-2xl shadow-lg py-2 px-3">Ajouter un nouvel horaire</a>
+        <a href="{{ route('schedule.create') }}" class="border bg-gray-400 text-black-400 rounded-2xl shadow-lg py-2 px-3">Ajouter un nouvel horaire</a>
     </x-slot>
 
     <div class="mb-3">
@@ -37,11 +37,11 @@
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {{ $schedule->id }}
                     </th>
-                    <td class="px-6 py-4 bg-blue-200">{{ $schedule->jour }}</td>
-                    <td class="px-6 py-4 bg-yellow-200"> {{ $schedule->heure_ouverture_am }}</td>
-                    <td class="px-6 py-4 bg-orange-200">{{ $schedule->heure_fermeture_am }}</td>
-                    <td class="px-6 py-4 bg-yellow-200"> {{ $schedule->heure_ouverture_pm }}</td>
-                    <td class="px-6 py-4 bg-orange-200">{{ $schedule->heure_fermeture_pm }}</td>
+                    <td class="px-6 py-4 bg-blue-200">{{ $schedule->day }}</td>
+                    <td class="px-6 py-4 bg-yellow-200"> {{ $schedule->opening_am }}</td>
+                    <td class="px-6 py-4 bg-orange-200">{{ $schedule->closing_am }}</td>
+                    <td class="px-6 py-4 bg-yellow-200"> {{ $schedule->opening_pm }}</td>
+                    <td class="px-6 py-4 bg-orange-200">{{ $schedule->closing_pm }}</td>
 
                     <td class="px-6 py-4 flex items-center gap-2">
                     <a href="{{ route('schedule.edit', $schedule) }}" class="rounded-2xl bg-red-200 text-sm text-black py-2 px-3 hover:bg-gray-200 hover:text-black-800 shadow-xl cursor-pointer transition-all duration-200">modifier</a>
@@ -51,7 +51,7 @@
                         {{-- ce formulaire est utilisé pour envoyer une requête de suppression
                                  à une route spécifique dans Laravel en utilisant la méthode DELETE.
                         Le paramètre $schedule est utilisé pour identifier l'élément à supprimer --}}
-                        <button type="submit" onclick="return confirm ('etes-vous sûr ?')" class="rounded-2xl bg-red-400  shadow-xl text-sm text-black py-2 px-3 hover:bg-gray-200 hover:text-black-800 cursor-pointer transition-all duration-200">supprimer</button>
+                        <button type="submit" onclick="return confirm ('etes-vous sûr ?')" class="rounded-2xl bg-red  shadow-xl text-sm text-black py-2 px-3 hover:bg-gray-200 hover:text-black-800 cursor-pointer transition-all duration-200">supprimer</button>
                     </form>
                     </td>
                 </tr>
