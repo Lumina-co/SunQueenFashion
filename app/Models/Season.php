@@ -12,7 +12,7 @@ class Season extends Model
 
     public function schedule()
 {
-    return $this->hasMany(Schedule::class, 'saison_id');
+    return $this->hasMany(Schedule::class, 'season_id');
     // Cette relation indique que chaque saison peut avoir plusieurs horaires associés.
 }
 }

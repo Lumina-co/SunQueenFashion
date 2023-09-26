@@ -13,9 +13,22 @@ class priceSeeder extends Seeder
      */
     public function run(): void
     {
-       Price ::create([
+        Price ::create([
+            'minutes'=>'5',
+            'prix'=>'4'
+        ]);
+        Price ::create([
             'minutes'=>'10',
+            'prix'=>'8'
+        ]);
+        Price ::create([
+            'minutes'=>'15',
             'prix'=>'12'
+        ]);
+
+       Price ::create([
+            'minutes'=>'20',
+            'prix'=>'16'
         ]);
     }
 }

@@ -23,7 +23,7 @@
             </div>
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="date_début">Date de début</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="date_début" name="date_début" value="{{ $season->date_début }}">
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="date" id="date_début" name="date_début" value="{{ $season->date_début }}">
             </div>
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="date_fin">Date de fin</label>

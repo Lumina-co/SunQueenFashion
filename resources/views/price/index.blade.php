@@ -1,10 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-4xl font-bold text-gray-800 leading-tight text-center">
-            séances
+            TARIFS
         </h2>
 
-        <a href="{{ route('price.create') }}" class="border bg-red-400 text-black-400 rounded-2xl shadow-lg py-2 px-3">Ajouter une séance</a>
+        <a href="{{ route('price.create') }}" class="border bg-red-400 text-black-400 rounded-2xl shadow-lg py-2 px-3">Ajouter un tarif</a>
     </x-slot>
     {{-- tableau + nom des colonnes --}}
     <div class="relative overflow-x-auto mt-12 max-w-7xl mx-auto px-8 pb-36">

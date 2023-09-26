@@ -1,36 +1,28 @@
 <x-guest-layout>
-    <img src="/assets/mode.png" class="w-full ">
+     <img src="/assets/mode.png" class="w-full ">
 
-    <div class=" bg-black text-white w-2/5 m-4 shadow-2xl ">
-        <h2 class="text-center ">HORAIRE</h2>
-        <div class="flex justify-between p-8 mx-8">
-            <div class="flex-col">
-                <ul>
-                    <li>Lundi</li>
-                    <li>Mardi</li>
-                    <li>Mercredi</li>
-                    <li>Jeudi</li>
-                    <li>Vendredi</li>
-                    <li>Samedi</li>
-                </ul>
-            </div>
-            <div class="flex-col">
-                <ul>
-                    <li>uniquemment sur rendez-vous</li>
-                    <li>9h-12h 14h19h</li>
-                    <li>9h-12h 14h19h</li>
-                    <li>9h-12h 14h19h</li>
-                    <li>9h-12h 14h19h</li>
-                    <li>9h-12h 14h17h</li>
+    <div class="flex justify-center items-center ">
+        <div class=" bg-black text-white w-2/5 m-4  shadow-2xl ">
+            <h2 class="text-center ">HORAIRE {{ $season->nom }}</h2>
+            @foreach ($schedules as $schedule)
+            <div class="flex justify-between p-8 mx-8">
+                <div class="">
+                    {{ $schedule->jour }}
+                </div>
 
-                </ul>
+                <div class="flex gap-4">
+                    <div class="">{{ $schedule->heure_ouverture_am }}</div>
+                    <div class="">{{ $schedule->heure_fermeture_am }}</div>
+                    <div class="">{{ $schedule->heure_ouverture_pm }}</div>
+                    <div class="">{{ $schedule->heure_fermeture_pm }}</div>
+                </div>
             </div>
+            @endforeach
         </div>
-
     </div>
 
     <div class="font-parisienne font-bold text-3xl px-36 text-center mx-36 my-16">
-        “ Chez Sun <span class="text-red-500">Queen </span>Fashion, vous êtes la star, et chaque jour est une occasion de briller ! ”
+        “ Chez Sun <span class="text-red">Queen </span>Fashion, vous êtes la star, et chaque jour est une occasion de briller ! ”
     </div>
 
     <div class="text-xl px-36 text-center mx-36 my-16">
@@ -42,7 +34,7 @@
         <a href=""><img src="{{ asset('assets/bronzage1.svg') }}" class=""></a>
         <a href=""><img src="{{ asset('assets/boutique1.svg') }}" class=""></a>
     </div>
-    <div class="bg-orange-300">
+    <div class="bg-dune">
         <div class=" m-16 text-lg flex p-16 ">
             <div class="flex items-center w-1/2 mx-36"> Rejoignez-nous pour une expérience de bronzage exceptionnelle, une peau radieuse et une détente totale. Vous méritez le meilleur, et nous sommes là pour vous l'offrir."
             </div>
@@ -90,38 +82,27 @@
                 <img src="{{ asset('assets/img_uv5.svg') }}" class="flex justify-end items-end ">
             </div>
         </div>
-
-        <div class=" bg-black text-white w-2/5 m-4 shadow-2xl ">
-            <h2 class="text-center ">TARIFS</h2>
-            <div class="flex justify-between p-8 mx-8">
-                <div class="flex-col">
-                    <ul>
-                        <li>1 minute</li>
-                        <li>5 minutes</li>
-                        <li>10 minutes</li>
-                        <li>15 minutes</li>
-                        <li>20 minutes</li>
-                    </ul>
+        <div class="flex justify-center items-center ">
+            <div class=" bg-black text-white w-2/5 m-4 shadow-2xl ">
+                <h2 class="text-center ">TARIFS</h2>
+                @foreach ($prices as $price)
+                <div class="flex justify-between  p-8 mx-8">
+                    <div class="flex justify-center items-center gap-16">
+                        <div class="">{{ $price->minutes }} minutes</div>
+                        <div class="">{{ $price->prix }} euros</div>
+                    </div>
                 </div>
-                <div class="flex-col">
-                    <ul>
-                        <li>0.80 centimes</li>
-                        <li>4 euros</li>
-                        <li>8 euros</li>
-                        <li>12 euros</li>
-                        <li>16 euros</li>
-                        <li>ouvert le lundi uniquement sur rendez-vous</li>
-                    </ul>
-                </div>
+                @endforeach
             </div>
-
         </div>
 
     </div>
 
-    <div class="flex justify-center p-16"> Bienvenue dans notre collection <span class="text-red-500"> Mode </span> et <span class="text-red-500">Accessoires </span> !
-        Découvrez dès maintenant notre sélection tendance de nouveaux arrivages
+    <div class="flex-col items-center justify-center font-poppins text-xl p-16"> 
+        <div class=""> Bienvenue dans notre collection <span class="text-red"> Mode </span> et <span class="text-red">Accessoires </span> ! </div>
+       <div class=""> Découvrez dès maintenant notre sélection tendance de nouveaux arrivages </div>
     </div>
+
     <div class="flex justify-center items-center gap-16 p-8">
         <div class="flex">
             <img src="{{ asset('assets/section_mode1.svg') }}" class="flex justify-center">

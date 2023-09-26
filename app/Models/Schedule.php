@@ -12,7 +12,7 @@ class Schedule extends Model
 
     public function season()
 {
-    return $this->belongsTo(Season::class, 'saison_id');
+    return $this->belongsTo(Season::class, 'season_id');
     // Cette relation indique que chaque horaire appartient à
     //  une saison spécifique en utilisant la clé étrangère "saison_id"
 }

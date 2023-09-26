@@ -38,4 +38,4 @@ Route::middleware([
     Route::resource('season', SeasonController::class);
 });
 
-Route::get('/accueil', [FrontController::class, 'accueil'])->name('sqf.accueil');
+Route::get('/accueil', [FrontController::class, 'index'])->name('sqf.accueil');

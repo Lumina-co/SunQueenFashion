@@ -6,10 +6,21 @@
 
         <a href="{{ route('schedule.create') }}" class="border bg-red-400 text-black-400 rounded-2xl shadow-lg py-2 px-3">Ajouter un nouvel horaire</a>
     </x-slot>
+
+    <div class="mb-3">
+        <label for="saison" class="form-label ">Saison :</label>
+
+        <select class="form-select rounded-2xl" id="saison">
+            <option value="season">  {{ $season->nom }}</option>
+            {{-- <option value="hiver">Hiver</option>
+            <option value="hiver">Automne</option>
+            <option value="hiver">Printemps</option> --}}
+        </select>
+    </div>
     {{-- tableau + nom des colonnes --}}
-    <div class="relative overflow-x-auto mt-12 max-w-7xl mx-auto px-8 pb-36">
-        <table class="w-full text-sm text-left text-black dark:text-gray-400">
-            <thead class="text-xs text-gray-700 uppercase bg-topaz dark:bg-gray-700 dark:text-gray-400">
+    <div class="relative overflow-x-auto mt-12 max-w-7xl mx-auto px-8 pb-36 shadow-xl">
+        <table class="w-full text-sm text-left text-black dark:text-gray-400 ">
+            <thead class="text-xs text-gray-700 bg uppercase bg-topaz dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">id</th>
                     <th scope="col" class="px-6 py-3">jour</th>
@@ -17,13 +28,6 @@
                     <th scope="col" class="px-6 py-3">heure de fermeture du matin</th>
                     <th scope="col" class="px-6 py-3">heure d'ouverture après-midi</th>
                     <th scope="col" class="px-6 py-3">heure de fermeture après-midi</th>
-                    <div class="mb-3">
-                        <label for="saison" class="form-label">Saison :</label>
-                        <select class="form-select" id="saison">
-                            <option value="ete">Été</option>
-                            <option value="hiver">Hiver</option>
-                        </select>
-                    </div>
                 </tr>
             </thead>
             <tbody>

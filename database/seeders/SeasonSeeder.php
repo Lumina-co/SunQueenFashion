@@ -15,15 +15,24 @@ class SeasonSeeder extends Seeder
     public function run(): void
     {
         Season::create([
-            'nom'=>'horaires_été',
-            'date_début'=>'2023-04-02',
-            'date_fin'=>"2023-09-14"
+            'nom' => 'hivers',
+            'date_début' => '2023-12-22',
+            'date_fin' => "2023-03-19"
         ]);
-
         Season::create([
-            'nom'=>'horaires_hivers',
-            'date_début'=>'2023-09-15',
-            'date_fin'=>"2023-04-01"
+            'nom' => 'printemps',
+            'date_début' => '2023-03-20',
+            'date_fin' => "2023-06-19"
+        ]);
+        Season::create([
+            'nom' => 'été',
+            'date_début' => '2023-06-20',
+            'date_fin' => "2023-09-21"
+        ]);
+        Season::create([
+            'nom' => 'automne',
+            'date_début' => '2023-09-22',
+            'date_fin' => "2023-12-21"
         ]);
     }
 }
