@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('day');
+            $table->string('jour');
             $table->time('opening_am')->nullable();
             $table->time('closing_am')->nullable();
             $table->time('opening_pm')->nullable();

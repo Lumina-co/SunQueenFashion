@@ -2,9 +2,9 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            modifier un horaire
+            modifier un prix
         </h2>
-        <a href="{{ route('price.index') }}" class="border border-red-400 text-red-400 rounded-md py-2 px-3">Retour aux thèmes</a>
+        <a href="{{ route('price.index') }}" class="bg-red rounded-xl py-2 px-3">Retour aux tarifs</a>
     </x-slot>
 {{-- L'attribut action du formulaire est défini avec la méthode route('price.update', $price),
  ce qui indique que lorsque le formulaire est soumis,
@@ -19,14 +19,14 @@
 
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="minutes">minutes</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="minutes" name="minutes" value="{{ $price->minutes}}">
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="time" id="minutes" name="minutes" value="{{ $price->minutes}}">
             </div>
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="prix">prix</label>
                 <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="prix" name="prix" value="{{ $price->prix}}">
             </div>
-           
-            <button type="submit" class="flex items-center justify-center h-8 px-2 w-36 bg-red-400 mt-8 rounded font-semibold text-sm mx-auto text-blue-100 hover:bg-red-400 hover:scale-105">update</button>
+
+            <button type="submit" class="flex items-center justify-center h-8 px-2 w-36 bg-red mt-8 rounded font-semibold text-sm mx-auto text-blue-100 hover:bg-red-400 hover:scale-105">Modifier</button>
         </form>
     </div>
 </x-app-layout>

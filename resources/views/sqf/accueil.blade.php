@@ -3,13 +3,20 @@
         <div class="relative">
             <img src="/assets/mode.png" alt="image_mode_accessoire" class="w-full h-[500px] ">
             <div class="absolute inset-0 flex items-center justify-center">
-                <img src="/assets/logo_page.svg" alt="logo" class="opacity-85 w-[700px] h-[700px]">
+                <img src="/assets/logo_page.svg" alt="logo" class="opacity-80 w-1/2 h-1/2">
             </div>
         </div>
 
         <div class=" flex justify-center items-center w-full ">
-            <div class=" bg-black text-white w-2/5 shadow-2xl ">
-                <h2 class="text-center pt-6 ">HORAIRE {{ $season->nom }}</h2>
+            <div class=" bg-black text-white  shadow-2xl ">
+                {{-- @foreach ($holidayss as $holidays)
+                <div class=" absolute flex  bg-black text-white  ">
+                    <div class="">{{ $holidays->date_début }}</div>
+                    <div class="">{{ $holidays->date_fin }}</div>
+                    <div class="">{{ $holidays->description}}</div>
+                </div>
+                @endforeach --}}
+                <h2 class="text-center pt-6 ">HORAIRES {{ $season->nom }}</h2>
                 @foreach ($schedules as $schedule)
                 <div class="flex justify-between p-8 mx-8">
                     <div class=""> {{ $schedule->day }}</div>
@@ -34,13 +41,13 @@
         Chez Sun Queen Fashion, chaque article que vous choisissez est une opportunité de mettre en avant votre personnalité éclatante et de vous sentir bien dans votre peau.
     </div>
 
-    <div class="flex justify-center ">
+    <div class="flex justify-center items-center">
         <div class="relative group">
             <img src="{{ asset('assets/bronzage1.svg') }}" alt="photo_uv " class="w-4/5 h-auto flex justify-center items-center transition-transform transform scale-100 group-hover:scale-110 group-hover:shadow-lg   ">
             <div class="absolute flex-col justify-center items-center inset-0 top-1/4 left-1/4 transform -translate-x-1/4 -translate-y-1/4 bg-black bg-opacity-0">
                 <p class=" text-white hover:font-poppins hover:text-black hover:font-bold hover:text-2xl"> "Obtenez un éclat d'été toute l'année ! Découvrez nos séances UV."</p>
                 <a href="">
-                    <button type="button" class="flex items-center justify-center border bg-dune rounded-3xl shadow-lg m-8 px-4 ">Continuer
+                    <button type="button" class="flex items-center justify-center transform hover:scale-110 transition-transform border bg-dune rounded-3xl shadow-lg m-8 px-4 ">Continuer
                     </button>
                 </a>
             </div>
@@ -51,7 +58,7 @@
                 <p class=" hover:font-poppins hover:text-black hover:font-bold hover:text-2xl"> "Découvrez notre sélection exclusive de mode et d'accessoires"</p>
 
                 <a href="">
-                    <button type="button" class="flex items-center justify-center border bg-dune rounded-3xl shadow-lg m-8 px-4 ">Continuer
+                    <button type="button" class="flex items-center justify-center transform hover:scale-110 transition-transform border bg-dune rounded-3xl shadow-lg m-8 px-4 ">Continuer
                     </button>
                 </a>
             </div>
@@ -104,7 +111,7 @@
                         <p> Si vous recherchez un bronzage revitalisant et des soins pour la peau, optez pour notre cabine Optima, qui booste la vitamine C et le collagène pour une peau éclatante.</p>
                     </div>
                 </div>
-                <div class="border-red bg-red flex w-3/5  m-8 p-4 text-bold">
+                <div class="border-red bg-red flex w-3/5  m-36 p-4 text-bold">
                     Art.9. attention ! l exposition aux rayonnements d un appareil de bronzage peut provoquer des cancers de la peau et des yeux, et, est responsable d un vieillissement cutané prématuré. L'existence d une reglementation du bronzage artificile ne permet pas d eliminer les risques sanitaires encourus en cas d exposition, en particulier le risque de cancer, l'utilisation de ces appareils est interdite aux personnes de moins de 18 ans, porter des lunettes de protections vendus.
                 </div>
             </div>
@@ -154,7 +161,7 @@
         </div>
 
         <a href="" class="flex items-center justify-center">
-            <button type="button" class="flex items-center justify-center border bg-dune rounded-3xl shadow-lg m-8 px-4 ">Visiter la boutique
+            <button type="button" class="flex items-center justify-center transform hover:scale-125 transition-transform border bg-dune rounded-3xl shadow-lg m-8 px-4 ">Visiter la boutique
             </button> </a>
     </div>
 
@@ -163,7 +170,7 @@
             Si vous avez des questions sur nos produits Mode et Accessoires ou si vous avez besoin d'assistance pour choisir les meilleurs articles, n'hésitez pas à nous contacter
         </div>
         <a href="" class="flex justify-center items-center w-10/12">
-            <button type="button" class=" border bg-dune rounded-3xl shadow-lg m-8 px-4 ">Contactez-nous
+            <button type="button" class=" border bg-dune  hover:scale-125 transition-transform  rounded-3xl shadow-lg m-8 px-4 ">Contactez-nous
             </button> </a>
     </div>
 

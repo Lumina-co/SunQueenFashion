@@ -4,48 +4,45 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
             modifier un horaire
         </h2>
-        <a href="{{ route('schedule.index') }}" class="border border-red-400 text-red-400 rounded-md py-2 px-3">Retour aux horaires</a>
+        <a href="{{ route('schedule.index') }}" class="bg-red rounded-xl py-2 px-3">Retour aux horaires</a>
     </x-slot>
 {{-- L'attribut action du formulaire est défini avec la méthode route('schedule.update', $schedule),
  ce qui indique que lorsque le formulaire est soumis,
  il enverra une requête POST à la route nommée 'schedule.update' avec le paramètre $tschedule --}}
-    <div class="flex justify-center relative overflow-x-auto mt-12 max-w-xl mx-auto px-8">
-        <form class="flex flex-col text-sm text-gray-500 uppercase bg-gray-50 rounded shadow-lg p-12 mt-12 dark:bg-gray-700 dark:text-gray-400" action='{{ route('schedule.update', $schedule)}}' method="post">
+
+{{-- formulaire d'édition --}}
+    <div class="flex justify-center  relative overflow-x-auto m-12 max-w-xl mx-auto px-8">
+        <form class="flex flex-col text-sm text-gray-500 uppercase  bg-gray-100 rounded shadow-lg p-8 mt-8 dark:bg-gray-700 dark:text-gray-400" action='{{ route('schedule.update', $schedule)}}' method="post">
             @csrf
 {{-- Les directives @csrf et @method('PUT') sont des directives Blade spécifiques à Laravel.
 @csrf génère un champ de protection contre les attaques CSRF (Cross-Site Request Forgery) pour sécuriser le formulaire,
  et @method('PUT') spécifie que la méthode HTTP utilisée pour la requête est PUT --}}
             @method('PUT')
-
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="jour">jour</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="day" name="day" value="{{ $schedule->day}}">
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="jour" name="jour" value="{{ $schedule->jour}}">
             </div>
             <div class="py-4">
-                <label class="font-semibold text-gray-500" for="opening_am">heure d'ouverture matin</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="opening_am" name="opening_am" value="{{ $schedule->opening_am }}">
+                <label class="font-semibold text-gray-500" for="opening_am">heure ouverture matin</label>
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="time" id="opening_am" name="opening_am" value="{{ $schedule->opening_am }}">
             </div>
             <div class="py-4">
-                <label class="font-semibold text-gray-500" for="closing_am">heure de fermeture matin</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="closing_am" name="closing_am" value="{{ $schedule->closing_am }}">
+                <label class="font-semibold text-gray-500" for="closing_am">heure fermeture matin</label>
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="time" id="closing_am" name="closing_am" value="{{ $schedule->closing_am }}">
             </div>
             <div class="py-4">
-                <label class="font-semibold text-gray-500" for="heure_ouverture_pm">heure d'ouverture aprés midi</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="heure_ouverture_pm" name="heure_ouverture_pm" value="{{ $schedule->heure_ouverture_pm }}">
+                <label class="font-semibold text-gray-500" for="heure_ouverture_pm">heure ouverture aprés midi</label>
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="time" id="opening_pm" name="opening_pm" value="{{ $schedule->opening_pm }}">
             </div>
             <div class="py-4">
-                <label class="font-semibold text-gray-500" for="closing_pm">heure de fermeture aprés midi</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="closing_pm" name="closing_pm" value="{{ $schedule->closing_pm }}">
-            </div>
-            <div class="mb-3">
-                <label for="saison" class="form-label">Saison :</label>
-                <select class="form-select" id="saison">
-                    <option value="ete">Été</option>
-                    <option value="hiver">Hiver</option>
-                </select>
+                <label class="font-semibold text-gray-500" for="closing_pm">heure fermeture aprés midi</label>
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="time" id="closing_pm" name="closing_pm" value="{{ $schedule->closing_pm }}">
             </div>
 
-            <button type="submit" class="flex items-center justify-center h-8 px-2 w-36 bg--400 mt-8 rounded font-semibold text-sm mx-auto text-blue-100 hover:bg-red-400 hover:scale-105">update</button>
+
+            <div class="flex justify-center">
+                <button type="submit" class="flex items-center justify-center h-8 px-2 w-36 bg-red-400 mt-8 rounded-xl shadow-xl font-semibold text-sm text-blue-100 bg-red hover:bg-blue-700">Modifier</button>
+            </div>
         </form>
     </div>
 </x-app-layout>

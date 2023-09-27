@@ -4,7 +4,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
             modifier des dates
         </h2>
-        <a href="{{ route('holidays.index') }}" class="border border-red-400 text-red-400 rounded-md py-2 px-3">Retour aux dates</a>
+        <a href="{{ route('holidays.index') }}" class="bg-red rounded-md py-2 px-3">Retour aux dates</a>
     </x-slot>
 {{-- L'attribut action du formulaire est défini avec la méthode route('holidays.update', $holidays),
  ce qui indique que lorsque le formulaire est soumis,
@@ -19,11 +19,11 @@
 
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="date_début">date de début</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="date_début" name="date_début" value="{{ $holidays->date_début}}">
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="date" id="date_début" name="date_début" value="{{ $holidays->date_début}}">
             </div>
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="date_fin">date de fin</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="date_fin" name="date_fin" value="{{ $holidays->date_fin}}">
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="date" id="date_fin" name="date_fin" value="{{ $holidays->date_fin}}">
             </div>
 
             <div class="py-4">
@@ -31,7 +31,7 @@
                 <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="description" name="description" value="{{ $holidays->description}}">
             </div>
 
-            <button type="submit" class="flex items-center justify-center h-8 px-2 w-36 bg-red-400 mt-8 rounded font-semibold text-sm mx-auto text-blue-100 hover:bg-red-400 hover:scale-105">update</button>
+            <button type="submit" class="flex items-center justify-center h-8 px-2 w-36 bg-red-400 mt-8 rounded font-semibold text-sm mx-auto text-blue-100 hover:bg-red-400 hover:scale-105">modifier</button>
         </form>
     </div>
 </x-app-layout>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Price;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
 use App\Models\Season;
@@ -15,12 +16,25 @@ class ScheduleController extends Controller
     public function index()
     {
         $schedules = Schedule::all(); // dans la variable theme ce trouve les resultats de ma requete
+        $prices = Price::all(); // dans la variable theme ce trouve les resultats de ma requete
 
-        $now = '2023-10-26';
-        $season = Season::where('date_début', '<=' , $now)->where('date_fin', '>=', $now)->first();
-        $schedules = Schedule::where('season_id', $season->id)->get();
+        // $now = '2023-10-26';
+        // $season = Season::where('date_début', '<=' , $now)->where('date_fin', '>=', $now)->first();
 
-        return view('schedule.index', compact('schedules', 'season'));
+        // $schedules = Schedule::where('season_id', $season->id)->get();
+
+        $seasons = Season::all();
+        $selectedSeason = request()->input('season', ''); // Récupérez la saison sélectionnée depuis la requête
+
+        if (!empty($selectedSeason)) {
+            // Si une saison est sélectionnée, récupérez les horaires correspondants
+            $schedules = Schedule::where('season_id', $selectedSeason)->get();
+        } else {
+            // Si aucune saison n'est sélectionnée, affichez tous les horaires
+            $schedules = Schedule::all();
+        }
+
+        return view('schedule.index', compact('schedules', 'seasons', 'selectedSeason', 'prices'));
     }
 
     /**
@@ -28,6 +42,7 @@ class ScheduleController extends Controller
      */
     public function create()
     {
+        $seasons = Season::all();
         return view('schedule.create');
     }
 
@@ -38,19 +53,19 @@ class ScheduleController extends Controller
     {
         $request->validate([
             'jour' => 'required',
-            'heure_ouverture_am' => 'required',
-            'heure_fermeture_am' => 'required',
-            'heure_ouverture_pm' => 'required',
-            'heure_fermeture_pm' => 'required',
+            'opening_am' => 'required',
+            'closing_am' => 'required',
+            'opening_pm' => 'required',
+            'closing_pm' => 'required',
         ]);
 
         $schedule = new Schedule; // objet schedule de type model
         $schedule->jour = $request->jour;
-        $schedule->heure_ouverture_am = $request->heure_ouverture_am; // champs de l'objet
+        $schedule->opening_am = $request->opening_am; // champs de l'objet
         // prend le champs nom dans le formulaire et l'assigne dans la variable schedule
-        $schedule->heure_fermeture_am = $request->heure_fermeture_am;
-        $schedule->heure_ouverture_pm = $request->heure_ouverture_pm;
-        $schedule->heure_fermeture_pm = $request->heure_fermeture_pm;
+        $schedule->closing_am = $request->closing_am;
+        $schedule->opening_pm = $request->opening_pm;
+        $schedule->closing_pm = $request->closing_pm;
 
 
         $schedule->save();
@@ -71,7 +86,8 @@ class ScheduleController extends Controller
      */
     public function edit(Schedule $schedule)
     {
-        return view('schedule.edit', compact('schedule'));
+
+        return view('schedule.edit', compact('schedule',));
     }
 
     /**
@@ -82,18 +98,18 @@ class ScheduleController extends Controller
         // Validez les données entrées par l'utilisateur
         $request->validate([
             'jour' => 'required',
-            'heure_ouverture_am' => 'required',
-            'heure_fermeture_am' => 'required',
-            'heure_ouverture_pm' => 'required',
-            'heure_fermeture_pm' => 'required',
+            'opening_am' => 'required',
+            'closing_am' => 'required',
+            'opening_pm' => 'required',
+            'closing_pm' => 'required',
         ]);
 
         // Mettez à jour les valeurs du modèle seulement si les validations passent
         $schedule->jour = $request->jour;
-        $schedule->heure_ouverture_am = $request->heure_ouverture_am;
-        $schedule->heure_fermeture_am = $request->heure_fermeture_am;
-        $schedule->heure_ouverture_pm = $request->heure_ouverture_pm;
-        $schedule->heure_fermeture_pm = $request->heure_fermeture_pm;
+        $schedule->opening_am = $request->opening_am;
+        $schedule->closing_am = $request->closing_am;
+        $schedule->opening_pm = $request->opening_pm;
+        $schedule->closing_pm = $request->closing_pm;
 
         // Utilisez la méthode save() pour enregistrer les modifications
         $schedule->save();

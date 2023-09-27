@@ -4,8 +4,8 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
             Ajouter une séance
         </h2>
-        <a href="{{ route('price.index') }}" class="border border-red-400 text-red-400 rounded-md py-2 px-3">Retour
-            aux séances</a>
+        <a href="{{ route('price.index') }}" class="bg-red text-red-400 rounded-xl py-2 px-3">Retour
+            aux tarifs</a>
     </x-slot>
 
     <div class="flex justify-center relative overflow-x-auto mt-12 max-w-xl mx-auto px-8">
@@ -28,7 +28,7 @@
 
             <div class="flex justify-center">
                 <button type="submit"
-                    class="flex items-center justify-center h-8 px-2 w-36 bg-blue-600 mt-8 rounded font-semibold text-sm text-blue-100 hover:bg-blue-700">create</button>
+                    class="flex items-center justify-center h-8 px-2 w-36 bg-red bg-blue-600 mt-8 rounded font-semibold text-sm text-blue-100 hover:bg-blue-700">créer</button>
             </div>
         </form>
     </div>

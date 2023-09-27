@@ -17,7 +17,7 @@ class FrontController extends Controller
     public function index()
     {
         // $now = now();
-        $now = '2023-09-26';
+        $now = '2023-10-26';
         $season = Season::where('date_début', '<=', $now)->where('date_fin', '>=', $now)->first();
         /**
          * SELECT *
@@ -25,7 +25,7 @@ class FrontController extends Controller
          * WHERE date_début <= $now
          * AND WHERE date_fin >= $now
          * LIMIT 1;
-         * 
+         *
          *  Cette requête SQL sélectionne la première saison dont la date de début est antérieure ou égale à $now
          *  et dont la date de fin est postérieure ou $now.
          * LIMIT 1 garantit qu'une seule ligne sera renvoyée,
@@ -36,7 +36,7 @@ class FrontController extends Controller
 
         $prices = Price::all(); //définition de la variable prices
 
-        return view('sqf.accueil', compact('schedules', 'season', 'prices'));
+        return view('sqf.accueil', compact('schedules', 'season', 'prices',));
     }
 
     /**

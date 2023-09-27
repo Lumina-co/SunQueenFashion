@@ -39,3 +39,5 @@ Route::middleware([
 });
 
 Route::get('/accueil', [FrontController::class, 'index'])->name('sqf.accueil');
+// Route::get('/accueil', [FrontController::class, 'update'])->name('sqf.accueil');
+
