@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
-class holidays extends Model
+class Holiday extends Model
 {
     use HasFactory;
     protected $fillable =  ['date_début', "date_fin",'description'];

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Schedule;
 use App\Models\Season;
 use App\Models\Price;
-use App\Models\holidays;
+use App\Models\Holiday;
 
 use Illuminate\Http\Request;
 
@@ -16,8 +16,7 @@ class FrontController extends Controller
      */
     public function index()
     {
-        // $now = now();
-        $now = '2023-10-26';
+        $now = now();
         $season = Season::where('date_début', '<=', $now)->where('date_fin', '>=', $now)->first();
         /**
          * SELECT *
@@ -33,10 +32,10 @@ class FrontController extends Controller
          */
 
         $schedules = Schedule::where('season_id', $season->id)->get();
-
         $prices = Price::all(); //définition de la variable prices
+        $holiday = Holiday::latest()->first();
 
-        return view('sqf.accueil', compact('schedules', 'season', 'prices',));
+        return view('sqf.accueil', compact('schedules', 'season', 'prices', 'holiday'));
     }
 
     /**

@@ -10,9 +10,13 @@ class Kernel extends ConsoleKernel
     /**
      * Define the application's command schedule.
      */
-    protected function schedule(Schedule $schedule): void
+    protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+    // Exécutez la commande le 31 décembre à minuit
+    $schedule->command('app:update-year')
+             ->cron('0 0 31 12 ');
+              // Minute: 55, Heure: 13, Jour du mois: 30, Mois: 9
+
     }
 
     /**

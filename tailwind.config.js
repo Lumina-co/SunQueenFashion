@@ -15,7 +15,7 @@ export default {
         extend: {
             fontFamily: {
                 'poppins': ['Poppins'],
-                'parisienne': ['parisienne'],
+                'parisienne': ['Parisienne'],
             },
             colors: {
                 'red': '#F0433F',

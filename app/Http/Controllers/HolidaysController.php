@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\holidays;
+use App\Models\Holiday;
 use Illuminate\Http\Request;
 
 class HolidaysController extends Controller
@@ -12,9 +12,9 @@ class HolidaysController extends Controller
      */
     public function index()
     {
-            $holidayss = holidays::all();// dans la variable theme ce trouve les resultats de ma requete
+            $holidays = Holiday::all();// dans la variable theme ce trouve les resultats de ma requete
 
-            return view('holidays.index', compact('holidayss'));
+            return view('holidays.index', compact('holidays'));
         }
 
         /**
@@ -36,14 +36,14 @@ class HolidaysController extends Controller
                 'description' => 'required',
             ]);
 
-                $holidays = new holidays;// objet holidays de type model
-                $holidays->date_début = $request->date_début;
-                $holidays->date_fin = $request->date_fin; // champs de l'objet
+                $holiday = new Holiday;// objet holidays de type model
+                $holiday->date_début = $request->date_début;
+                $holiday->date_fin = $request->date_fin; // champs de l'objet
                 // prend le champs nom dans le formulaire et l'assigne dans la variable holidays
-                $holidays->description = $request->description;
+                $holiday->description = $request->description;
 
 
-                $holidays->save();
+                $holiday->save();
 
                 return redirect()->route('holidays.index');
         }
@@ -59,15 +59,15 @@ class HolidaysController extends Controller
         /**
          * Show the form for editing the specified resource.
          */
-        public function edit(holidays $holidays)
+        public function edit(Holiday $holiday)
         {
-            return view('holidays.edit', compact('holidays'));
+            return view('holidays.edit', compact('holiday'));
         }
 
         /**
          * Update the specified resource in storage.
          */
-        public function update(Request $request, holidays $holidays)
+        public function update(Request $request, Holiday $holiday)
         {
             // Validez les données entrées par l'utilisateur
             $request->validate([
@@ -77,12 +77,12 @@ class HolidaysController extends Controller
             ]);
 
              // Mettez à jour les valeurs du modèle seulement si les validations passent
-             $holidays->date_début = $request->date_début;
-             $holidays->date_fin = $request->date_fin;
-             $holidays->description = $request->description;
+             $holiday->date_début = $request->date_début;
+             $holiday->date_fin = $request->date_fin;
+             $holiday->description = $request->description;
 
              // Utilisez la méthode save() pour enregistrer les modifications
-            $holidays->save();
+            $holiday->save();
 
             return redirect()->route('holidays.index');
         }
@@ -92,9 +92,9 @@ class HolidaysController extends Controller
         /**
          * Remove the specified resource from storage.
          */
-        public function destroy(holidays $holidays)
+        public function destroy(holiday $holiday)
         {
-            $holidays->delete();
+            $holiday->delete();
 
             return redirect()->route('holidays.index');
         }
