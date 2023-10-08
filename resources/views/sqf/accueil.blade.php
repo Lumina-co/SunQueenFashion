@@ -142,31 +142,30 @@
             </div>
 
 
-          {{-- Tanning booths section --}}
-<div class="flex flex-col items-center lg:flex-row lg:justify-center lg:items-start p-8">
-    <div class="lg:w-3/5 lg:pl-16">
-        <h3 class="lg:text-5xl text-2xl font-bold mb-8 mt-16 -ml-44 text-center lg:text-left">NOS MACHINES</h3>
-        <div class="lg:flex flex-col lg:flex-row gap-20 lg:mb-12  w-full">
-            <img src="{{ asset('assets/img_uv4.svg') }}" alt="bronzage_soleil" class="w-full lg:w-1/2 mx-auto lg:mx-0 mb-6 lg:mb-0">
-            <div class="lg:w-full lg:pl-8">
-                <div class="text-4xl font-bold mt-36 mb-4">Notre cabine mégaSun</div>
-                <p class="text-2xl leading-8">La forte booster de collagène offre une expérience de bronzage incomparable, avec des options de confort telles que la climatisation, l'aromathérapie pour une détente totale, et la diffusion d'odeurs pour une expérience sensorielle unique. De plus, notre système Acqua jet vaporise des jets de brume rafraîchissante pour vous rafraîchir pendant la séance.</p>
+            {{-- Tanning booths section --}}
+            <div class="flex flex-col items-center lg:flex-row lg:justify-center lg:items-start p-8">
+                <div class="lg:w-3/5 lg:pl-16">
+                    <h3 class="lg:text-5xl text-4xl font-bold mb-16 lg:mt-16 lg:-ml-44 ml-8 lg:text-left">NOS MACHINES</h3>
+                    <div class="lg:flex flex-col lg:flex-row gap-20 lg:mb-12  w-full">
+                        <img src="{{ asset('assets/img_uv4.svg') }}" alt="bronzage_soleil" class="w-full lg:w-1/2 mx-auto lg:mx-0  lg:mb-0">
+                        <div class="lg:w-full lg:pl-8">
+                            <div class="text-4xl   font-bold mt-36 mb-4">Notre cabine mégaSun</div>
+                            <p class="text-2xl leading-8">La forte booster de collagène offre une expérience de bronzage incomparable, avec des options de confort telles que la climatisation, l'aromathérapie pour une détente totale, et la diffusion d'odeurs pour une expérience sensorielle unique. De plus, notre système Acqua jet vaporise des jets de brume rafraîchissante pour vous rafraîchir pendant la séance.</p>
+                        </div>
+                    </div>
+                    <div class="lg:flex flex-col lg:flex-row lg:mb-12 mt-28 gap-20 lg:space-x-12 w-full">
+                        <div class="lg:w-full lg:m-28 lg:-ml-20 lg:pr-8">
+                            <div class="text-4xl font-bold mb-4">Notre cabine Optima</div>
+                            <p class="text-2xl leading-8">Si vous recherchez un bronzage revitalisant et des soins pour la peau, optez pour notre cabine Optima, qui booste la vitamine C et le collagène pour une peau éclatante.</p>
+                        </div>
+                        <img src="{{ asset('assets/img_uv5.svg') }}" alt="image_bronzage" class="w-full my-8 lg:w-1/2 mx-auto lg:mx-0 mb-6 lg:mb-0">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="lg:flex flex-col lg:flex-row lg:mb-12 mt-28 gap-20 lg:space-x-12 w-full">
-            <div class="lg:w-full lg:-ml-20 lg:pr-8">
-                <div class="text-4xl font-bold mb-4">Notre cabine Optima</div>
-                <p class="text-2xl leading-8">Si vous recherchez un bronzage revitalisant et des soins pour la peau, optez pour notre cabine Optima, qui booste la vitamine C et le collagène pour une peau éclatante.</p>
-            </div>
-            <img src="{{ asset('assets/img_uv5.svg') }}" alt="image_bronzage" class="w-full my-8 lg:w-1/2 mx-auto lg:mx-0 mb-6 lg:mb-0">
-        </div>
-    </div>
-</div>
 
             {{-- warning panel --}}
             <div class="border-red1 bg-red1/90 shadow-2xl w-3/5 flex mx-auto rounded-md  p-4 my-20 text-bold">
-                Art.9. attention ! l'exposition aux rayonnements d'un appareil de bronzage peut provoquer des cancers de la peau et des yeux, et, est responsable d un vieillissement cutané prématuré. L'existence d une reglementation du bronzage artificile ne permet pas d eliminer les risques sanitaires encourus en cas d exposition, en particulier le risque de cancer, l'utilisation de ces appareils est interdite aux personnes de moins de 18 ans, porter des lunettes de protections vendus.
-            </div>
+                Art. 9 - Attention ! L'exposition aux rayonnements d'un appareil de bronzage peut provoquer des cancers de la peau et des yeux, et est responsable d'un vieillissement cutané prématuré. L'existence d'une réglementation du bronzage artificiel ne permet pas d'éliminer les risques sanitaires encourus en cas d'exposition, en particulier le risque de cancer. L'utilisation de ces appareils est interdite aux personnes de moins de 18 ans. Porter des lunettes de protection est vendu.            </div>
 
             {{-- Prices BDD --}}
             <div class="flex justify-center items-center ">
@@ -185,14 +184,14 @@
         </div>
 
 
-
-        <div id="mode" class="text-center py-8 md:py-16 lg:py-24">
-            <div class="text-4xl md:text-5xl lg:text-6xl font-bold mx-4 mb-8">Bienvenue dans notre collection</div>
-            <div class="text-4xl md:text-5xl lg:text-6xl lg:font-bold mx-4 font-parisienne mb-8">Mode et Accessoires!</div>
-            <div class="text-xl md:text-2xl lg:text-3xl sm:font-bold mx-4 mb-8">Découvrez dès maintenant notre sélection tendance de nouveaux arrivages</div>
+        {{-- fashion section --}}
+        <div id="mode" class="text-center py-8 md:py-16 lg:py-24 flex-col my-8">
+            <div class="text-4xl md:text-5xl lg:text-6xl font-bold p-8 ">Bienvenue dans notre collection</div>
+            <div class="text-4xl md:text-5xl lg:text-6xl lg:font-bold p-16 font-parisienne ">Mode et Accessoires!</div>
+            <div class="text-xl md:text-2xl lg:text-3xl w-2/4 m-auto font-bold  ">Découvrez dés maintenant notre sélection tendance de nouveaux arrivages</div>
         </div>
 
-        <div class="flex flex-col md:flex-row justify-center items-center gap-8 p-8">
+        <div class="flex flex-col md:flex-row justify-center items-center gap-8 ">
             <div class="flex justify-center">
                 <img src="{{ asset('assets/section_mode1.svg') }}" alt="article_produit" class="w-32 md:w-48 lg:w-64 transform hover:scale-110 duration-300 transition-transform">
             </div>
@@ -207,52 +206,53 @@
         </div>
 
         <div class="flex flex-col items-center justify-center  px-4">
-            <div class="text-lg md:text-xl lg:text-2xl w-3/  my-8">
+            <div class="text-lg md:text-xl lg:text-2xl w-3/4  my-16">
                 Que vous cherchiez à ajouter une touche de glamour à votre look quotidien, à préparer votre peau pour l'été, ou simplement à explorer un style qui vous ressemble, Sun Queen Fashion est là pour vous guider. Parcourez notre boutique en ligne et laissez-vous emporter par la magie des paillettes, de la mode et de la confiance en vous.
             </div>
 
-            <button type="button" class="transform hover:scale-125 transition-transform border bg-dune hover:opacity-80 py-2 px-4 mb-8 rounded-3xl shadow-lg">Visiter la boutique</button>
+            <button type="button" class="transform hover:scale-125 transition-transform border bg-dune py-2 px-4 mb-8 rounded-3xl shadow-lg">Visiter la boutique</button>
         </div>
 
-
+        {{-- style advice --}}
         <div class="flex flex-col items-center justify-center min-h-screen p-8 md:p-16">
-            <div class="w-full md:w-3/4 lg:p-16 bg-dune rounded-2xl p-8 font-poppins">
+            <div class="w-full md:w-3/4 lg:p-16 bg-dune opacity-80 rounded-2xl p-8 font-poppins">
                 <h2 class="text-5xl text-center font-parisienne font-bold">Cinq conseils de style</h2>
 
                 <p class="my-8">
-                    <span class="font-bold">1. Connaître Votre Morphologie :</span> Comprenez votre morphologie (silhouette en A, en H, en O, en V) pour choisir des vêtements qui mettent en valeur vos atouts naturels et équilibrent votre silhouette.
+                    <span class="font-bold">1. Connaître Votre Morphologie </span> Comprenez votre morphologie (silhouette en A, en H, en O, en V) pour choisir des vêtements qui mettent en valeur vos atouts naturels et équilibrent votre silhouette.
                 </p>
 
                 <p class="my-8">
 
-                    <span class="font-bold">2. L'Importance des Accessoires :</span> Les accessoires peuvent transformer une tenue simple en quelque chose de spectaculaire. N'ayez pas peur d'expérimenter avec des bijoux, des sacs à main et des écharpes pour ajouter une touche unique à votre look.
+                    <span class="font-bold">2. L'Importance des Accessoires </span> Les accessoires peuvent transformer une tenue simple en quelque chose de spectaculaire. N'ayez pas peur d'expérimenter avec des bijoux, des sacs à main et des écharpes pour ajouter une touche unique à votre look.
                 </p>
 
                 <p class="my-8">
 
-                    <span class="font-bold">3. La Couleur Parle :</span> Les couleurs peuvent influencer votre humeur et la perception des autres. Apprenez quelles couleurs mettent en valeur votre teint et votre personnalité. Osez les couleurs vives pour apporter de l'énergie à votre tenue.
+                    <span class="font-bold">3. La Couleur Parle </span> Les couleurs peuvent influencer votre humeur et la perception des autres. Apprenez quelles couleurs mettent en valeur votre teint et votre personnalité. Osez les couleurs vives pour apporter de l'énergie à votre tenue.
                 </p>
 
                 <p class="my-8">
 
-                    <span class="font-bold">4. La Coupe Fait Tout :</span> Une coupe bien ajustée est la clé d'un look élégant. Qu'il s'agisse de robes, de pantalons ou de chemises, assurez-vous que vos vêtements épousent bien votre silhouette sans être trop serrés ni trop lâches.
+                    <span class="font-bold">4. La Coupe Fait Tout </span> Une coupe bien ajustée est la clé d'un look élégant. Qu'il s'agisse de robes, de pantalons ou de chemises, assurez-vous que vos vêtements épousent bien votre silhouette sans être trop serrés ni trop lâches.
                 </p>
 
                 <p class="my-8">
 
-                    <span class="font-bold">5. Expérimenter et S'Amuser :</span> La mode est une forme d'expression personnelle. N'ayez pas peur d'expérimenter avec de nouveaux styles, des textures et des combinaisons de couleurs. Laissez libre cours à votre créativité et amusez-vous avec la mode.
+                    <span class="font-bold">5. Expérimenter et S'Amuser </span> La mode est une forme d'expression personnelle. N'ayez pas peur d'expérimenter avec de nouveaux styles, des textures et des combinaisons de couleurs. Laissez libre cours à votre créativité et amusez-vous avec la mode.
                 </p>
             </div>
         </div>
 
-        <a href="#haut-de-page" id="navBar" class="fixed bottom-6 right-6 p-2 bg-gray-700 text-white rounded-full hover:bg-gray-600 transition duration-300 ease-in-out hidden md:block">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        {{-- scrollToTop --}}
+        <div id="scrollToTop" class="fixed bottom-4 right-4 bg-gray-500 hover:bg-gray-700 shadow-xl text-white p-4 rounded-full mb-20 mr-4 cursor-pointer hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
             </svg>
-        </a>
+        </div>
 
+        {{-- contact --}}
         <div id="contact" class="flex flex-col items-center justify-center text-base py-16 lg:text-xl m-8 md:m-0">
-            <!-- Informations de contact -->
             <div class="flex p-4 gap-4">
                 <img src="{{ asset('assets/icone_add.svg') }}" alt="icone_adresse">
                 <div>17 rue Georges Genoux 70000 Vesoul</div>
@@ -273,7 +273,6 @@
         <div id="map" class="w-3/4 m-auto h-80 md:h-96 lg:h-128"></div>
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-vF5wZ4u0zH1uu5RdUb7BSizIhm4kOGz1COlD1l+MBAo=" crossorigin=""></script>
 
-        <!-- JavaScript  -->
         <script>
             var map = L.map('map').setView([47.62249091867886, 6.156544022729926], 15); //coordonnées
             L.marker([47.62249091867886, 6.156544022729926]).addTo(map);
