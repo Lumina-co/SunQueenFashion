@@ -6,7 +6,7 @@ use App\Models\Price;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class priceSeeder extends Seeder
+class PriceSeeder extends Seeder
 {
     /**
      * Run the database seeds.

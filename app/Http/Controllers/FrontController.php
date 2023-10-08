@@ -38,7 +38,8 @@ class FrontController extends Controller
         return view('sqf.accueil', compact('schedules', 'season', 'prices', 'holiday'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function conditions()// appel la vue
+    {
+        return view('sqf.CGU');
+    }
 }

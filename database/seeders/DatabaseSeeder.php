@@ -15,10 +15,10 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
 
-            holidaysSeeder::class,
+            HolidaySeeder::class,
             SeasonSeeder::class,
             ScheduleSeeder::class,
-            priceSeeder::class,
+            PriceSeeder::class,
 
         ]);
     }

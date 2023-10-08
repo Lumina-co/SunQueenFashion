@@ -18,12 +18,11 @@ export default {
                 'parisienne': ['Parisienne'],
             },
             colors: {
-                'red': '#F0433F',
-                'black': '#050304',
+                'red1': '#F0433F',
+                'black1': '#161616',
                 'dune': '#D5C0A3',
                 'white': '#F6F6F6',
-                'pink' : 'F24C3D',
-
+                'pinki' : 'F24C3D',
             },
         },
     },

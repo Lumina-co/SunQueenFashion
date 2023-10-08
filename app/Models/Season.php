@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Season extends Model
 {
     use HasFactory;
-    protected $fillable =  ['nom', 'date_début','date_fin'];
+    protected $fillable =  ['nom', 'date_début', 'date_fin'];
 
     public function schedule()
 {

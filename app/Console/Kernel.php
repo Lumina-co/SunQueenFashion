@@ -4,6 +4,8 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Models\Season;
+use Illuminate\Support\Carbon;
 
 class Kernel extends ConsoleKernel
 {
@@ -12,11 +14,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-    // Exécutez la commande le 31 décembre à minuit
-    $schedule->command('app:update-year')
-             ->cron('0 0 31 12 ');
-              // Minute: 55, Heure: 13, Jour du mois: 30, Mois: 9
-
+        // Exécutez la commande la dernière date de la saison d'hiver
+        $season = Season::where('nom', 'Hiver')->first();
+        $month = Carbon::parse($season->date_fin)->format('m');
+        $day = Carbon::parse($season->date_fin)->format('d');
+        $schedule->command('seasons:update')->yearlyOn($month, $day, '23:00');
     }
 
     /**
