@@ -98,7 +98,7 @@
         </nav>
 
         {{-- mobile menu --}}
-        <nav class="leading-10 w-full block lg:hidden bg-black1 py-4">
+        <nav class="leading-10 w-full  block lg:hidden bg-black1 py-4">
             <button id="button" class="m-4">
                 <svg id="open" class="hidden bg-white" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
                     <path fill="currentColor" d="M222 128a6 6 0 0 1-6 6H40a6 6 0 0 1 0-12h176a6 6 0 0 1 6 6ZM40 70h176a6 6 0 0 0 0-12H40a6 6 0 0 0 0 12Zm176 116H40a6 6 0 0 0 0 12h176a6 6 0 0 0 0-12Z" />
@@ -181,21 +181,20 @@
         {{ $slot }}
     </div>
 
-    <footer>
-        <div class=" flex justify-between bg-black1 shadow-lg">
 
+    <footer class="lg:flex justify-between bg-black1 shadow-lg p-4 md:p-8">
+        <div class="ml-8 mb-4 md:mb-0">
             <x-application-logo />
-
-            <div class="flex justify-center  items-center gap-8">
-
-                <a href="" class="group flex items-center text-white hover:text-red1 transition-colors duration-300">
-                    CGU
-                </a>
-
-                <a href="" class="group flex items-center text-white hover:text-red1 transition-colors duration-300">
-                    Copyright
-                </a>
-            </div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center md:space-x-8">
+            <a href="{{ route('sqf.CGU') }}" class="group flex items-center text-white hover:text-red1 transition-colors duration-300">
+                CGU
+            </a>
+            <a href="#mode" class="group flex items-center text-white hover:text-red1 transition-colors duration-300">
+                © 2023 Tous droits réservés.
+            </a>
+            <div class="flex mt-4 md:mt-0">
+                <ul class="flex gap-4">
 
             {{-- social réseaux --}}
             <div class="flex m-8 mr-16">
@@ -243,9 +242,8 @@
                     </li>
                 </ul>
             </div>
-        </div>
-        </div>
-    </footer>
+
+        </footer>
 
     @livewireScripts
 </body>

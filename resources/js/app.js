@@ -1,10 +1,10 @@
 import "./bootstrap";
 document.getElementById("button").onclick = function () {
     document.getElementById("menu").classList.toggle("hidden");
-
     document.getElementById("open").classList.toggle("hidden");
     document.getElementById("close").classList.toggle("hidden");
 };
+
 
 // Sélectionne le bouton de retour en haut par son ID
 const scrollToTopBtn = document.getElementById("scrollToTop");

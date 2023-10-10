@@ -13,6 +13,7 @@ class PriceController extends Controller
     public function index()
     {
         $prices = Price::all();
+        //SELECT * FROM prices;
 
         return view('price.index', compact('prices'));
     }

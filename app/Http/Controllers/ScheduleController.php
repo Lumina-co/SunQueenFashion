@@ -15,24 +15,37 @@ class ScheduleController extends Controller
      */
     public function index()
     {
-        $schedules = Schedule::all(); // dans la variable theme ce trouve les resultats de ma requete
-        $prices = Price::all(); // dans la variable theme ce trouve les resultats de ma requete
-
-        // $now = '2023-10-26';
-        // $season = Season::where('date_début', '<=' , $now)->where('date_fin', '>=', $now)->first();
-
-        // $schedules = Schedule::where('season_id', $season->id)->get();
+        $schedules = Schedule::all(); // selectionne toutes les horaires depuis la table schedule
+        $prices = Price::all(); // dans la variable prix ce trouve les resultats de ma requête (tous les prix de la table prix)
 
         $seasons = Season::all();
         $selectedSeason = request()->input('season', ''); // Récupérez la saison sélectionnée depuis la requête
 
         if (!empty($selectedSeason)) {
-            // Si une saison est sélectionnée, récupérez les horaires correspondants
+            // Si une saison est sélectionnée, récupérer les horaires correspondants
             $schedules = Schedule::where('season_id', $selectedSeason)->get();
         } else {
             // Si aucune saison n'est sélectionnée, affichez tous les horaires
             $schedules = Schedule::all();
         }
+        //................requête SQL....................................
+        /**
+         *  -- Sélectionnez toutes les saisons depuis la table des saisons
+        *SELECT * FROM seasons;
+
+         *   -- Récupérez l'ID de la saison sélectionnée depuis la requête (par exemple, 'selectedSeasonID')
+          *  SET @selectedSeasonID = ...; -- Remplacez ceci par la valeur réelle récupérée depuis la requête
+
+           * -- Si une saison est sélectionnée
+            *IF @selectedSeasonID IS NOT NULL THEN
+             *   -- Sélectionnez tous les horaires correspondant à l'ID de la saison sélectionnée
+              *  SELECT * FROM schedules WHERE season_id = @selectedSeasonID;
+            *ELSE
+              *  -- Si aucune saison n'est sélectionnée, affichez tous les horaires
+               * SELECT * FROM schedules;
+            *END IF;
+             */
+
 
         return view('schedule.index', compact('schedules', 'seasons', 'selectedSeason', 'prices'));
     }
@@ -42,18 +55,20 @@ class ScheduleController extends Controller
      */
     public function create()
     {
-        $seasons = Season::all();
+        $season = Season::all();
+        //SELECT * FROM seasons;
+
         return view('schedule.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request) // fonction la ou il y a la requete pour la bd
+    public function store(Request $request) // la fonction a 2 parametre : objet de type model et la variable définie
     {
         $request->validate([
             'jour' => 'required',
-            'opening_am' => 'required',
+            'opening_am' => 'required', //NOT NULL
             'closing_am' => 'required',
             'opening_pm' => 'required',
             'closing_pm' => 'required',
@@ -87,7 +102,7 @@ class ScheduleController extends Controller
     public function edit(Schedule $schedule)
     {
 
-        return view('schedule.edit', compact('schedule',));
+        return view('schedule.edit', compact('schedule', ));
     }
 
     /**
