@@ -19,10 +19,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -38,7 +34,7 @@ Route::middleware([
     Route::resource('season', SeasonController::class);
 });
 
-Route::get('/accueil', [FrontController::class, 'index'])->name('sqf.accueil');
+Route::get('/', [FrontController::class, 'index'])->name('sqf.accueil');
 // Route::get('/accueil', [FrontController::class, 'update'])->name('sqf.accueil');
 Route::get('/CGU', [FrontController::class, 'conditions'])->name('sqf.CGU');
 
