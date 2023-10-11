@@ -29,8 +29,11 @@
             <div class="ml-8">
                 <x-application-logo />
             </div>
-            <div class="flex items-center space-x-8">
+            <div class="flex items-center space-x-20">
 
+                <a href="{{ route('sqf.accueil') }}" class="group flex items-center text-white hover:text-red1 transition-colors duration-300">
+                    Accueil
+                </a>
                 <a href="#uv" class="group flex items-center text-white hover:text-red1 transition-colors duration-300">
                     Solarium
                 </a>
@@ -183,10 +186,11 @@
 
     {{-- footer responsif --}}
     <footer class="flex lg:justify-between bg-black1 shadow-lg ">
-        <div class="flex lg:justify-start ml-6">
+        <div class="flex ml-6 ">
             <x-application-logo />
         </div>
-        <div class=" flex justify-center  items-center lg:gap-48">
+        <div class="flex items-center justify-center gap-36">
+
             <a href="{{ route('sqf.CGU') }}" class="group flex items-center  text-white hover:text-red1 transition-colors duration-300">
                 CGU
             </a>

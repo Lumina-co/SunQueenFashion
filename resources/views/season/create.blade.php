@@ -4,7 +4,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
             Ajouter des dates
         </h2>
-        <a href="{{ route('season.index') }}" class="bg-red rounded-xl py-2 px-3">Retour
+        <a href="{{ route('season.index') }}" class="bg-red-400 rounded-xl py-2 px-3">Retour
             aux saisons</a>
     </x-slot>
 
@@ -36,7 +36,7 @@
 
             <div class="flex justify-center">
                 <button type="submit"
-                    class="flex items-center justify-center h-8 px-2 w-36 bg-blue-600 mt-8 rounded font-semibold text-sm text-blue-100 hover:bg-blue-700">créer</button>
+                    class="flex items-center justify-center h-8 px-2 w-36 bg-red bg-blue-600 mt-8 rounded font-semibold text-sm text-blue-100 hover:bg-blue-700">créer</button>
             </div>
         </form>
     </div>

@@ -4,7 +4,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
             modifier des dates
         </h2>
-        <a href="{{ route('holidays.index') }}" class="bg-red rounded-md py-2 px-3">Retour aux vacances</a>
+        <a href="{{ route('holidays.index') }}" class="bg-red-400 rounded-md py-2 px-3">Retour aux vacances</a>
     </x-slot>
 {{-- L'attribut action du formulaire est défini avec la méthode route('holiday.update', $holiday),
  ce qui indique que lorsque le formulaire est soumis,
@@ -31,7 +31,7 @@
                 <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="description" name="description" value="{{ $holiday->description}}">
             </div>
 
-            <button type="submit" class="flex items-center justify-center h-8 px-2 w-36 bg-red-400 mt-8 rounded font-semibold text-sm mx-auto text-blue-100 hover:bg-red-400 hover:scale-105">modifier</button>
+            <button type="submit" class="flex items-center justify-center h-8 px-2 w-36 bg-red bg-blue-600 mt-8 rounded font-semibold text-sm text-blue-100 hover:bg-blue-700">modifier</button>
         </form>
     </div>
 </x-app-layout>

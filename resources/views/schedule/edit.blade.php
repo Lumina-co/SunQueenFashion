@@ -4,7 +4,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
             modifier un horaire
         </h2>
-        <a href="{{ route('schedule.index') }}" class="bg-red rounded-xl py-2 px-3">Retour aux horaires</a>
+        <a href="{{ route('schedule.index') }}" class="bg-red-400 rounded-xl py-2 px-3">Retour aux horaires</a>
     </x-slot>
 {{-- L'attribut action du formulaire est défini avec la méthode route('schedule.update', $schedule),
  ce qui indique que lorsque le formulaire est soumis,
@@ -41,7 +41,7 @@
 
 
             <div class="flex justify-center">
-                <button type="submit" class="flex items-center justify-center h-8 px-2 w-36 bg-red-400 mt-8 rounded-xl shadow-xl font-semibold text-sm text-blue-100 bg-red hover:bg-blue-700">Modifier</button>
+                <button type="submit" class="flex items-center justify-center h-8 px-2 w-36 bg-red bg-blue-600 mt-8 rounded font-semibold text-sm text-blue-100 hover:bg-blue-700">Modifier</button>
             </div>
         </form>
     </div>

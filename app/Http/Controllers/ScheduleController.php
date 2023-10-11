@@ -55,10 +55,10 @@ class ScheduleController extends Controller
      */
     public function create()
     {
-        $season = Season::all();
+        $seasons = Season::all();
         //SELECT * FROM seasons;
 
-        return view('schedule.create');
+        return view('schedule.create', compact('seasons'));
     }
 
     /**

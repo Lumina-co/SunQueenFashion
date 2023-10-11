@@ -221,7 +221,7 @@
         </div>
 
         {{-- style advice --}}
-        <div class="flex flex-col items-center  p-8 md:p-16">
+        <div class="flex flex-col items-center  p-8 lg:p-16">
             <div class="w-full md:w-3/4 lg:p-16 bg-dune opacity-80 rounded-2xl p-8 font-poppins">
                 <h2 class="text-5xl text-center font-parisienne font-bold">Cinq conseils de style</h2>
 
@@ -259,7 +259,7 @@
         </div>
 
         {{-- contact --}}
-        <div id="contact" class="w-full flex flex-col lg:items-center  text-base py-16 lg:text-xl m-8 md:m-0">
+        <div id="contact" class="w-full flex flex-col lg:items-center  text-base lg:py-16 lg:text-xl m-8 md:m-0">
             <div class="flex p-4 gap-4">
                 <img src="{{ asset('assets/icone_add.svg') }}" alt="icone_adresse">
                 <div>17 rue Georges Genoux 70000 Vesoul</div>

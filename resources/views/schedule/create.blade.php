@@ -4,7 +4,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
             Ajouter un horaire
         </h2>
-        <a href="{{ route('schedule.index') }}" class="bg-red text-black rounded-2xl py-2 px-4">Retour
+        <a href="{{ route('schedule.index') }}" class="bg-red-400 text-black rounded-2xl py-2 px-4">Retour
             aux horaires</a>
     </x-slot>
 
@@ -42,7 +42,7 @@
                             <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="time" id="closing_pm" name="closing_pm"> </div>
 
                             <div class="flex justify-center">
-                                <button type="submit" class="flex items-center justify-center h-8 px-2 w-36 bg-red mt-8 rounded-xl shadow-xl font-semibold text-sm text-blue-100 hover:bg-blue-700">créer</button>
+                                <button type="submit" class="flex items-center justify-center h-8 px-2 w-36 bg-red bg-blue-600 mt-8 rounded font-semibold text-sm text-blue-100 hover:bg-blue-700">créer</button>
                             </div>
         </form>
     </div>
