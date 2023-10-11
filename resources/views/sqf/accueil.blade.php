@@ -12,10 +12,10 @@
         </div>
 
         {{-- schedules section --}}
-        <div class="flex justify-center  relative lg:-mt-24 items-center w-full ">
+        <div class="flex justify-center relative lg:-mt-24 items-center  w-full ">
 
             {{-- holidays BDD --}}
-            <div class="bg-black1 rounded-2xl text-white  shadow-2xl ">
+            <div class="bg-black1 rounded-2xl lg:w-2/4 text-white shadow-2xl ">
                 @if($holiday != null)
                 <div class="flex w-full justify-center font-semibold rounded-t-xl lg:text-2xl lg:px-4 py-3 bg-red1 text-white">
                     <div class="">{{ $holiday->description}}</div>
@@ -27,7 +27,7 @@
                 {{-- schedules BDD --}}
                 <div class="flex-col">
                     <h2 class="text-center py-6 mx-8 font-poppins font-bold text-2xl border-b-2 border-white">HORAIRES</h2>
-                    <div class="px-4 py-4 lg:px-8 lg:py-8 flex flex-col gap-y-2">
+                    <div class="px-4 py-4 lg:px-8 lg:py-8 flex flex-col gap-y-4">
                         @foreach ($schedules as $schedule)
                         <div class="flex justify-between lg:text-2xl">
                             <div class="font-semibold mr-auto "> {{ $schedule->jour }}</div>
