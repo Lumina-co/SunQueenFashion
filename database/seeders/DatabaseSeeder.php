@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             HolidaySeeder::class,
             SeasonSeeder::class,
             ScheduleSeeder::class,
-            PriceSeeder::class,
+            //PriceSeeder::class,
 
         ]);
     }
