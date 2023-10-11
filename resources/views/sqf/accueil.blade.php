@@ -152,15 +152,15 @@
                     <div class="lg:flex flex-col lg:flex-row gap-24 w-full">
                         <img src="{{ asset('assets/img_uv4.svg') }}" alt="bronzage_soleil" class=" my-16 lg:w-full lg:mx-0  lg:mb-0">
                         <div class="lg:w-full lg:pl-8">
-                            <div class="lg:text-6xl text-4xl  font-parisienne font-black lg:mt-36 mt-20 mb-4">Notre cabine mégaSun</div>
+                            <div class="lg:text-5xl text-4xl md:text-4xl  font-parisienne font-black lg:mt-36 mt-20 mb-4">Notre cabine mégaSun</div>
                             <p class="lg:text-2xl text-lg leading-8">La forte booster de collagène offre une expérience de bronzage incomparable, avec des options de confort telles que la climatisation, l'aromathérapie pour une détente totale, et la diffusion d'odeurs pour une expérience sensorielle unique. De plus, notre système Acqua jet vaporise des jets de brume rafraîchissante pour vous rafraîchir pendant la séance.</p>
                         </div>
                     </div>
                     <div class="lg:flex flex-col lg:flex-row lg:mb-12 lg:mt-28 gap-20 lg:space-x-12 w-full">
                         <div class="lg:w-full lg:mt-36 my-8  ">
-                            <div class="lg:text-6xl text-4xl font-black font-parisienne mt-20 mb-4">Notre cabine Optima</div>
+                            <div class="lg:text-5xl text-4xl md:text-4xl font-black font-parisienne mt-20 mb-4">Notre cabine Optima</div>
                             <p class="text-lg lg:text-2xl leading-8">Si vous recherchez un bronzage revitalisant et des soins pour la peau, optez pour notre cabine Optima, qui booste la vitamine C et le collagène grâce à la technologie innovante Rubin Collagen Booster.</p>
-                            <p class=" lg:pt-36 pt-20 lg:ml-36 text-lg lg:text-2xl">
+                            <p class=" lg:pt-36 pt-20 lg:ml-20 text-lg lg:text-2xl">
                                 Avant votre séance UV, bénéficiez de l'expertise d'un professionnel diplômé! afin de vous guidez pour définir précisément votre phototype de peau, assurant ainsi une séance UV sécurisée et efficace.
                             </p>
                         </div>

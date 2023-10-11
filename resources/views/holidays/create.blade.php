@@ -5,7 +5,7 @@
             Ajouter des vacances
         </h2>
         <a href="{{ route('holidays.index') }}" class="bg-red rounded-xl py-2 px-3">Retour
-            aux dates</a>
+            aux vacances</a>
     </x-slot>
 
     <div class="flex justify-center relative overflow-x-auto mt-12 max-w-xl mx-auto px-8">

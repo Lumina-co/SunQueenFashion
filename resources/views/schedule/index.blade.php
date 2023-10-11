@@ -2,7 +2,7 @@
     <x-slot name="header">
 
         <h2 class="font-semibold bg-gray-800 text-4xl p-4 font-bold text-white leading-tight text-center">
-            Gestion des horaires
+             Horaires
         </h2>
 
         <a href="{{ route('schedule.create') }}" class="border bg-red m-8 text-black-400 rounded-2xl shadow-lg py-2 px-3">Ajouter un nouvel horaire</a>
@@ -10,7 +10,7 @@
     <div class="flex justify-center items-center ">
         <div class="bg-gray-500 border-8 w-3/4  ">
             <div class="m-4">
-                
+
                 {{-- formulaire de filtrage de saison --}}
                 <form action="{{ route('schedule.index') }}" method="GET">
                     <label class=" rounded-xl" for="season">Saison :</label>

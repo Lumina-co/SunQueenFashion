@@ -181,23 +181,21 @@
         {{ $slot }}
     </div>
 
-
-    <footer class="lg:flex justify-between bg-black1 shadow-lg p-4 md:p-8">
-        <div class="ml-8 mb-4 md:mb-0">
+    {{-- footer responsif --}}
+    <footer class="flex lg:justify-between bg-black1 shadow-lg ">
+        <div class="flex lg:justify-start ml-6">
             <x-application-logo />
         </div>
-        <div class="flex flex-col md:flex-row items-center md:space-x-8">
-            <a href="{{ route('sqf.CGU') }}" class="group flex items-center text-white hover:text-red1 transition-colors duration-300">
+        <div class=" flex justify-center  items-center lg:gap-48">
+            <a href="{{ route('sqf.CGU') }}" class="group flex items-center  text-white hover:text-red1 transition-colors duration-300">
                 CGU
             </a>
-            <a href="#mode" class="group flex items-center text-white hover:text-red1 transition-colors duration-300">
+            <div class=" flex items-center text-white hover:text-red1 transition-colors duration-300">
                 © 2023 Tous droits réservés.
-            </a>
-            <div class="flex mt-4 md:mt-0">
-                <ul class="flex gap-4">
+            </div>
 
             {{-- social réseaux --}}
-            <div class="flex m-8 mr-16">
+            <div class="flex mr-16 ">
                 <ul class="flex gap-4 ">
                     <li>
                         <a href="https://www.facebook.com/profile.php?id=100089303376662" target="_blank">
@@ -242,9 +240,7 @@
                     </li>
                 </ul>
             </div>
-
-        </footer>
-
+    </footer>
     @livewireScripts
 </body>
 </html>

@@ -4,7 +4,7 @@
             Vacances
         </h2>
 
-        <a href="{{ route('holidays.create') }}" class="border bg-red text-black-400 rounded-2xl shadow-lg py-2 px-3">Ajouter un nouvel horaire</a>
+        <a href="{{ route('holidays.create') }}" class="border bg-red text-black-400 rounded-2xl shadow-lg py-2 px-3">Ajouter des vancances</a>
     </x-slot>
     <div class="flex justify-center items-center ">
         <div class="bg-gray-500 border-8 w-1/2  ">

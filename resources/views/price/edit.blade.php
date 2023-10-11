@@ -2,7 +2,7 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            modifier un prix
+            modifier un tarif
         </h2>
         <a href="{{ route('price.index') }}" class="bg-red rounded-xl py-2 px-3">Retour aux tarifs</a>
     </x-slot>
