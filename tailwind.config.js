@@ -24,6 +24,11 @@ export default {
                 'white': '#F6F6F6',
                 'pinki' : 'F24C3D',
             },
+
+            // animation: {
+            //     'fade-in1': 'fade-in 0.5s ease-in-out 0.5s forwards',
+            //     'fade-in2': 'fade-in 0.5s ease-in-out 1s forwards',
+            //   }
         },
     },
 
