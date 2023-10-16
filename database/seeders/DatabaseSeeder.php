@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Console\Scheduling\Schedule;
+//use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             HolidaySeeder::class,
             SeasonSeeder::class,
             ScheduleSeeder::class,
-            //PriceSeeder::class,
+            PriceSeeder::class,
 
         ]);
     }

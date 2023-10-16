@@ -4,7 +4,7 @@
         {{-- hero section --}}
         <div class="relative">
             <div class="bg-black1">
-                <img src="/assets/mode.png" alt="image_mode_accessoire" class="w-full lg:h-[500px] opacity-80   ">
+                <img src="/assets/mode.png" alt="image_mode_accessoire" class="w-full lg:h-[500px] opacity-80">
             </div>
             <div class="absolute inset-0 flex items-center justify-center">
                 <img src="/assets/logo-page.png" alt="logo" class="w-1/2 h-1/2">
