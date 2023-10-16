@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Schedule extends Model
 {
     use HasFactory;
-    protected $fillable =  ['jour', 'opening_am','closing_am','opening_pm','closing_pm','season_id'];
+    protected $fillable =  ['day', 'opening_am','closing_am','opening_pm','closing_pm','season_id'];
 
     public function season()
 {

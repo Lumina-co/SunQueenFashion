@@ -15,19 +15,22 @@ class ScheduleController extends Controller
      */
     public function index()
     {
-        $schedules = Schedule::all(); // selectionne toutes les horaires depuis la table schedule
-        $prices = Price::all(); // dans la variable prix ce trouve les resultats de ma requête (tous les prix de la table prix)
 
         $seasons = Season::all();
-        $selectedSeason = request()->input('season', ''); // Récupérez la saison sélectionnée depuis la requête
+        $selectedSeason = request()->input('season'); // Récupérez la saison sélectionnée depuis la requête
 
-        if (!empty($selectedSeason)) {
-            // Si une saison est sélectionnée, récupérer les horaires correspondants
-            $schedules = Schedule::where('season_id', $selectedSeason)->get();
-        } else {
-            // Si aucune saison n'est sélectionnée, affichez tous les horaires
-            $schedules = Schedule::all();
+
+
+        // Si l'input de saison est nul, récupérer la saison actuelle
+        if ($selectedSeason === null) {
+            $selectedSeason = Season::where('date_début', '<=', now())
+                ->where('date_fin', '>=', now())
+                ->first()->id;
         }
+
+        // Si une saison est sélectionnée, récupérer les horaires correspondants
+        $schedules = Schedule::where('season_id', $selectedSeason)->get();
+
         //................requête SQL....................................
         /**
          *  -- Sélectionnez toutes les saisons depuis la table des saisons
@@ -47,7 +50,7 @@ class ScheduleController extends Controller
              */
 
 
-        return view('schedule.index', compact('schedules', 'seasons', 'selectedSeason', 'prices'));
+        return view('schedule.index', compact('schedules', 'seasons', 'selectedSeason'));
     }
 
     /**
@@ -67,15 +70,16 @@ class ScheduleController extends Controller
     public function store(Request $request) // la fonction a 2 parametre : objet de type model et la variable définie
     {
         $request->validate([
-            'jour' => 'required',
-            'opening_am' => 'required', //NOT NULL
+            'day' => 'required',
+            'opening_am' => 'required',
+            //NOT NULL
             'closing_am' => 'required',
             'opening_pm' => 'required',
             'closing_pm' => 'required',
         ]);
 
         $schedule = new Schedule; // objet schedule de type model
-        $schedule->jour = $request->jour;
+        $schedule->day = $request->day;
         $schedule->opening_am = $request->opening_am; // champs de l'objet
         // prend le champs nom dans le formulaire et l'assigne dans la variable schedule
         $schedule->closing_am = $request->closing_am;
@@ -112,15 +116,15 @@ class ScheduleController extends Controller
     {
         // Validez les données entrées par l'utilisateur
         $request->validate([
-            'jour' => 'required',
+            'day' => 'required',
             'opening_am' => 'required',
             'closing_am' => 'required',
             'opening_pm' => 'required',
             'closing_pm' => 'required',
         ]);
 
-        // Mettez à jour les valeurs du modèle seulement si les validations passent
-        $schedule->jour = $request->jour;
+        // Mettez à day les valeurs du modèle seulement si les validations passent
+        $schedule->day = $request->day;
         $schedule->opening_am = $request->opening_am;
         $schedule->closing_am = $request->closing_am;
         $schedule->opening_pm = $request->opening_pm;

@@ -5,7 +5,6 @@ use App\Http\Controllers\HolidaysController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SeasonController;
-use App\Models\Price;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +34,6 @@ Route::middleware([
 });
 
 Route::get('/', [FrontController::class, 'index'])->name('sqf.accueil');
-// Route::get('/accueil', [FrontController::class, 'update'])->name('sqf.accueil');
+
 Route::get('/CGU', [FrontController::class, 'conditions'])->name('sqf.CGU');
 

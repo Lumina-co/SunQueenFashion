@@ -13,14 +13,15 @@
 {{-- formulaire d'édition --}}
     <div class="flex justify-center  relative overflow-x-auto m-12 max-w-xl mx-auto px-8">
         <form class="flex flex-col text-sm text-gray-500 uppercase  bg-gray-100 rounded shadow-lg p-8 mt-8 dark:bg-gray-700 dark:text-gray-400" action='{{ route('schedule.update', $schedule)}}' method="post">
+            {{-- method post pour stoker --}}
             @csrf
 {{-- Les directives @csrf et @method('PUT') sont des directives Blade spécifiques à Laravel.
 @csrf génère un champ de protection contre les attaques CSRF (Cross-Site Request Forgery) pour sécuriser le formulaire,
  et @method('PUT') spécifie que la méthode HTTP utilisée pour la requête est PUT --}}
-            @method('PUT')
+            @method('PUT') //PUT: modifie
             <div class="py-4">
-                <label class="font-semibold text-gray-500" for="jour">jour</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="jour" name="jour" value="{{ $schedule->jour}}">
+                <label class="font-semibold text-gray-500" for="day">jour</label>
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="day" name="day" value="{{ $schedule->day}}">
             </div>
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="opening_am">heure ouverture matin</label>
@@ -31,7 +32,7 @@
                 <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="time" id="closing_am" name="closing_am" value="{{ $schedule->closing_am }}">
             </div>
             <div class="py-4">
-                <label class="font-semibold text-gray-500" for="heure_ouverture_pm">heure ouverture aprés midi</label>
+                <label class="font-semibold text-gray-500" for="opening_pm">heure ouverture aprés midi</label>
                 <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="time" id="opening_pm" name="opening_pm" value="{{ $schedule->opening_pm }}">
             </div>
             <div class="py-4">

@@ -30,7 +30,7 @@
                     <div class="p-8 lg:px-8 lg:py-8 flex flex-col gap-y-4">
                         @foreach ($schedules as $schedule)
                         <div class="flex justify-between lg:text-2xl">
-                            <div class="font-semibold pr-8 -ml-3 md:px-4 lg:px-4 "> {{ $schedule->jour }}</div>
+                            <div class="font-semibold pr-8 -ml-3 md:px-4 lg:px-4 "> {{ $schedule->day }}</div>
                             <div class="flex gap-8">
                                 <div class="flex gap-2">
                                     <div class="">{{ Carbon\Carbon::parse($schedule->opening_am)->format('H\hi') }}</div>
@@ -74,7 +74,7 @@
                     <p class="mx-auto text-center text-black1 transition-all duration-500 font-poppins font-bold text-lg lg:text-2xl flex">
                         Obtenez un éclat d'été toute l'année ! Découvrez nos séances UV.
                     </p>
-                    <a href="#" class="flex mx-auto items-center py-1 mb-4 justify-center font-semibold border bg-dune text-black1 rounded-3xl shadow-lg pl-4 pr-6 mt-4 lg:mt-8">
+                    <a href="#uv" class="flex hover:scale-125 transition-transform mx-auto items-center py-1 mb-4 justify-center font-semibold border bg-dune text-black1 rounded-3xl shadow-lg pl-4 pr-6 mt-4 lg:mt-8">
                         <svg class="w-6 h-6 mr-2 p-1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                             <path fill="#f9f5f5" d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6l-6 6l-1.41-1.41z" />
                         </svg>
@@ -88,7 +88,7 @@
                     <p class="mx-auto text-center text-black1 transition-all duration-500 font-poppins font-bold text-lg lg:text-2xl flex">
                         Découvrez notre sélection exclusive de mode et d'accessoires.
                     </p>
-                    <a href="#" class="flex mx-auto items-center py-1 mb-4 justify-center font-semibold border bg-dune text-black1 rounded-3xl shadow-lg pl-4 pr-6 mt-4 lg:mt-8">
+                    <a href="#mode" class="flex hover:scale-125 transition-transform mx-auto items-center py-1 mb-4 justify-center font-semibold border bg-dune text-black1 rounded-3xl shadow-lg pl-4 pr-6 mt-4 lg:mt-8">
                         <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                             <path fill="#f9f5f5" d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6l-6 6l-1.41-1.41z" />
                         </svg>
@@ -148,36 +148,40 @@
             {{-- Tanning booths section --}}
             <div class="flex flex-col items-center lg:flex-row lg:justify-center lg:items-start ">
                 <div class="lg:w-4/5 mx-8 lg:pl-16">
-                    <h3 class="lg:text-6xl text-4xl font-bold lg:mt-36 lg:mb-16 my-8 md:text-center mt-16  lg:-m-16 lg:text-left">NOS MACHINES</h3>
+                    <h3 class="lg:text-6xl text-4xl font-bold lg:mt-20 lg:mb-16 my-8 md:text-center mt-16  lg:-m-16 lg:text-left">NOS MACHINES</h3>
                     <div class="lg:flex flex-col lg:flex-row gap-24 w-full">
                         <img src="{{ asset('assets/img_uv4.svg') }}" alt="bronzage_soleil" class=" my-8 mx-auto lg:w-full lg:mx-0 shadow-xl rounded-md lg:mb-0">
                         <div class="lg:w-full lg:pl-8">
-                            <div class="lg:text-5xl text-4xl md:text-4xl  font-parisienne font-black lg:mt-20 mt-20 mb-4">Notre cabine mégaSun</div>
+                            <div class="lg:text-5xl text-3xl md:text-4xl  font-parisienne font-black lg:mt-36 mt-20 mb-4">Notre cabine MégaSun</div>
                             <p class="lg:text-2xl text-lg leading-8">La forte booster de collagène offre une expérience de bronzage incomparable, avec des options de confort telles que la climatisation, l'aromathérapie pour une détente totale, et la diffusion d'odeurs pour une expérience sensorielle unique. De plus, notre système Acqua jet vaporise des jets de brume rafraîchissante pour vous rafraîchir pendant la séance.</p>
                         </div>
                     </div>
                     <div class="lg:flex flex-col lg:flex-row lg:mb-12 lg:mt-8 gap-20 lg:space-x-12 w-full">
                         <div class="lg:w-full lg:mt-20 my-8  ">
-                            <div class="lg:text-5xl text-4xl md:text-4xl font-black font-parisienne mt-12 mb-4">Notre cabine Optima</div>
+                            <div class="lg:text-5xl text-3xl md:text-4xl font-black font-parisienne mt-12 mb-4">Notre cabine Optima</div>
                             <p class="text-lg lg:text-2xl leading-8">Si vous recherchez un bronzage revitalisant et des soins pour la peau, optez pour notre cabine Optima, qui booste la vitamine C et le collagène grâce à la technologie innovante Rubin Collagen Booster.</p>
                             <p class=" lg:pt-20 pt-16 lg:ml-20 text-lg lg:text-2xl">
                                 Avant votre séance UV, bénéficiez de l'expertise d'un professionnel diplômé! afin de vous guidez pour définir précisément votre phototype de peau, assurant ainsi une séance UV sécurisée et efficace.
                             </p>
                         </div>
 
-                        <img src="{{ asset('assets/img_uv5.svg') }}" alt="image_bronzage" class="lg:w-full rounded-md my-12 mx-auto lg:mx-0 mb-6 lg:mb-0">
+                        <img src="{{ asset('assets/img_uv5.svg') }}" alt="image_bronzage" class="lg:w-3/4 rounded-md my-12 mx-auto lg:mx-0 mb-6 lg:mb-0">
                     </div>
                 </div>
             </div>
 
             {{-- warning panel --}}
-            <div class="border-red1 bg-red1/90 shadow-2xl w-3/5 flex mx-auto rounded-md  p-4 lg:my-20 my-16 text-bold">
-                Art. 9 - Attention ! L'exposition aux rayonnements d'un appareil de bronzage peut provoquer des cancers de la peau et des yeux, et est responsable d'un vieillissement cutané prématuré. L'existence d'une réglementation du bronzage artificiel ne permet pas d'éliminer les risques sanitaires encourus en cas d'exposition, en particulier le risque de cancer. L'utilisation de ces appareils est interdite aux personnes de moins de 18 ans. Porter des lunettes de protection est vendu. </div>
+            <div class="border-red1  bg-red1/90 shadow-2xl w-3/4 flex mx-auto rounded-md  p-4 lg:my-20 my-16 text-bold">
+                <img class="pr-4" src="{{ asset('assets/cautionSign.svg') }}" alt="attention_avertissement">
+                <p class="font-bold">
+                    Art. 9 - Attention ! L'exposition aux rayonnements d'un appareil de bronzage peut provoquer des cancers de la peau et des yeux, et est responsable d'un vieillissement cutané prématuré. L'existence d'une réglementation du bronzage artificiel ne permet pas d'éliminer les risques sanitaires encourus en cas d'exposition, en particulier le risque de cancer. L'utilisation de ces appareils est interdite aux personnes de moins de 18 ans. Porter des lunettes de protection est vendu.
+                </p>
+            </div>
 
             {{-- Prices BDD --}}
             <div class="flex justify-center items-center ">
                 <div class=" bg-black1 rounded-2xl text-white lg:w-2/6 my-12 p-8 shadow-2xl ">
-                    <h2 class="text-center text-2xl p-6">TARIFS</h2>
+                    <h2 class="text-center text-2xl  border-b-2 mb-4 leading-10  border-white">TARIFS</h2>
                     @foreach ($prices as $price)
                     <div class="flex justify-center items-center">
                         <div class="flex  gap-36">

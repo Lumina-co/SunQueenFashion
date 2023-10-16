@@ -1,23 +1,23 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="text-4xl font-bold text-white bg-gray-800 p-4 leading-tight text-center">
-            SAISONS
-        </h2>
+        <div class="flex-col justify-center">
+            <h2 class="text-3xl font-bold text-white rounded-xl w-3/4  bg-gray-800 p-4 leading-tight text-center">
+                SAISONS
+            </h2>
+        </div>
 
         <a href="{{ route('season.create') }}" class="border bg-red-400 text-black-400 rounded-2xl  shadow-lg py-2 px-3">Ajouter des dates</a>
     </x-slot>
     <div class="flex justify-center items-center ">
-        <div class="bg-gray-500 border-8 w-1/2  ">
             {{-- tableau + nom des colonnes --}}
-            <div class="relative overflow-x-auto mt-12 max-w-7xl mx-auto px-8 pb-12">
-                <table class="w-full text-sm text-left text-black dark:text-gray-400">
-                    <thead class="text-xs uppercase bg-topaz border-2 text-white">
+                <table class="w-full text-md text-left  text-black bg-gray-400">
+                    <thead class="text-md border-2">
                         <tr>
                             <th scope="col" class="px-6 py-3">id</th>
                             <th scope="col" class="px-6 py-3">nom</th>
                             <th scope="col" class="px-6 py-3">heure de début</th>
                             <th scope="col" class="px-6 py-3">heure de fin</th>
-
+                            <th scope="col" class="px-6 py-3 text-center">Actions</th>
 
                         </tr>
                     </thead>
@@ -33,22 +33,24 @@
                             <td class="px-6 py-4 border-2">{{ $season->date_fin }}</td>
 
                             </td>
-                            <td class="px-6 py-4 flex items-center flex justify-center items-center gap-2  bg-gray-200">
-                                <a href="{{ route('season.edit', $season) }}" class="rounded-2xl bg-red-200 text-sm text-black py-2 px-3 hover:bg-gray-200 hover:text-black-800 shadow-xl cursor-pointer bg-yellow-300 transition-all duration-200">modifier</a>
+                            <td class="px-6 py-4 flex justify-center  gap-2 ">
+                                <a href="{{ route('season.edit', $season) }}" class="rounded-2xl text-sm text-black py-2 px-3 hover:bg-gray-200 hover:text-black-800 shadow-xl cursor-pointer bg-yellow-300 transition-all duration-200">
+                                    <img src="{{ asset('assets/update.svg') }}">
+                                </a>
                                 <form action="{{ route('season.destroy', $season) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     {{-- ce formulaire est utilisé pour envoyer une requête de suppression
                                  à une route spécifique dans Laravel en utilisant la méthode DELETE.
                         Le paramètre $season est utilisé pour identifier l'élément à supprimer --}}
-                                    <button type="submit" onclick="return confirm ('etes-vous sûr ?')" class="rounded-2xl bg-red  shadow-xl text-sm text-black py-2 px-3 hover:bg-gray-200 bg-red-400 hover:text-black-800 cursor-pointer transition-all duration-200">supprimer</button>
+                                    <button type="submit" onclick="return confirm ('etes-vous sûr ?')" class="rounded-2xl bg-red  shadow-xl text-sm text-black py-2 px-3 hover:bg-gray-200 bg-red-400 hover:text-black-800 cursor-pointer transition-all duration-200">
+                                        <img src="{{ asset('assets/bin.svg') }}">
+                                    </button>
                                 </form>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-            </div>
-        </div>
     </div>
 </x-app-layout>

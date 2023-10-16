@@ -23,8 +23,8 @@
             <button type="submit" class="bg-white p-2 m-4 rounded-xl">Filtrer</button>
 
             <div class="py-4">
-                <label class="font-semibold text-gray-500 " for="jour">jour</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="jour" name="jour" required size="8">
+                <label class="font-semibold text-gray-500 " for="day">Jour</label>
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="day" name="day" required size="8">
             </div>
 
             <div class="py-4">

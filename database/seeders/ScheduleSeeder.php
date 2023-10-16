@@ -15,7 +15,7 @@ class ScheduleSeeder extends Seeder
     public function run(): void
     {
         Schedule::create([
-            'jour'=>'Lundi',
+            'day'=>'Lundi',
             'opening_am'=>('9:00'),
             'closing_am'=>('12:00'),
             'opening_pm'=>('14:00'),
@@ -24,7 +24,7 @@ class ScheduleSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'jour'=>'Mardi',
+            'day'=>'Mardi',
             'opening_am'=>('9:00'),
             'closing_am'=>('12:00'),
             'opening_pm'=>('14:00'),
@@ -33,7 +33,7 @@ class ScheduleSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'jour'=>'Mecredi',
+            'day'=>'Mecredi',
             'opening_am'=>('9:00'),
             'closing_am'=>('12:00'),
             'opening_pm'=>('14:00'),
@@ -42,7 +42,7 @@ class ScheduleSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'jour'=>'Jeudi',
+            'day'=>'Jeudi',
             'opening_am'=>('9:00'),
             'closing_am'=>('12:00'),
             'opening_pm'=>('14:00'),
@@ -51,7 +51,7 @@ class ScheduleSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'jour'=>'Vendredi',
+            'day'=>'Vendredi',
             'opening_am'=>('9:00'),
             'closing_am'=>('12:00'),
             'opening_pm'=>('14:00'),
@@ -60,7 +60,7 @@ class ScheduleSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'jour'=>'Samedi',
+            'day'=>'Samedi',
             'opening_am'=>('9:00'),
             'closing_am'=>('12:00'),
             'opening_pm'=>('14:00'),
@@ -69,7 +69,7 @@ class ScheduleSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'jour'=>'Lundi',
+            'day'=>'Lundi',
             'opening_am'=>('9:00'),
             'closing_am'=>('12:00'),
             'opening_pm'=>('14:00'),
@@ -78,7 +78,7 @@ class ScheduleSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'jour'=>'Mardi',
+            'day'=>'Mardi',
             'opening_am'=>('9:00'),
             'closing_am'=>('12:00'),
             'opening_pm'=>('14:00'),
@@ -87,7 +87,7 @@ class ScheduleSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'jour'=>'Mercredi',
+            'day'=>'Mercredi',
             'opening_am'=>('9:00'),
             'closing_am'=>('12:00'),
             'opening_pm'=>('14:00'),
@@ -96,7 +96,7 @@ class ScheduleSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'jour'=>'Jeudi',
+            'day'=>'Jeudi',
             'opening_am'=>('9:00'),
             'closing_am'=>('12:00'),
             'opening_pm'=>('14:00'),
@@ -105,7 +105,7 @@ class ScheduleSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'jour'=>'Vendredi',
+            'day'=>'Vendredi',
             'opening_am'=>('9:00'),
             'closing_am'=>('12:00'),
             'opening_pm'=>('14:00'),
@@ -114,7 +114,7 @@ class ScheduleSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'jour'=>'Samedi',
+            'day'=>'Samedi',
             'opening_am'=>('9:00'),
             'closing_am'=>('12:00'),
             'opening_pm'=>('14:00'),
@@ -123,84 +123,84 @@ class ScheduleSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'jour'=>'Lundi',
+            'day'=>'Lundi',
             'opening_am'=>('9:00'),
             'closing_pm'=>('19:00'),
             'season_id'=> 2
         ]);
 
         Schedule::create([
-            'jour'=>'Mardi',
+            'day'=>'Mardi',
             'opening_am'=>('9:00'),
             'closing_pm'=>('19:00'),
             'season_id' => 2
         ]);
 
         Schedule::create([
-            'jour'=>'Mercredi',
+            'day'=>'Mercredi',
             'opening_am'=>('9:00'),
             'closing_pm'=>('19:00'),
             'season_id'=> 2
         ]);
 
         Schedule::create([
-            'jour'=>'Jeudi',
+            'day'=>'Jeudi',
             'opening_am'=>('9:00'),
             'closing_pm'=>('19:00'),
             'season_id'=> 2
         ]);
 
         Schedule::create([
-            'jour'=>'Vendredi',
+            'day'=>'Vendredi',
             'opening_am'=>('9:00'),
             'closing_pm'=>('19:00'),
             'season_id'=> 2
         ]);
 
         Schedule::create([
-            'jour'=>'Samedi',
+            'day'=>'Samedi',
             'opening_am'=>('9:00'),
             'closing_pm'=>('17:00'),
             'season_id'=> 2
         ]);
 
         Schedule::create([
-            'jour'=>'Lundi',
+            'day'=>'Lundi',
             'opening_am'=>('9:00'),
             'closing_pm'=>('19:00'),
             'season_id'=> 3
         ]);
 
         Schedule::create([
-            'jour'=>'Mardi',
+            'day'=>'Mardi',
             'opening_am'=>('9:00'),
             'closing_pm'=>('19:00'),
             'season_id' => 3
         ]);
 
         Schedule::create([
-            'jour'=>'Mercredi',
+            'day'=>'Mercredi',
             'opening_am'=>('9:00'),
             'closing_pm'=>('19:00'),
             'season_id'=> 3
         ]);
 
         Schedule::create([
-            'jour'=>'Jeudi',
+            'day'=>'Jeudi',
             'opening_am'=>('9:00'),
             'closing_pm'=>('19:00'),
             'season_id'=> 3
         ]);
 
         Schedule::create([
-            'jour'=>'Vendredi',
+            'day'=>'Vendredi',
             'opening_am'=>('9:00'),
             'closing_pm'=>('19:00'),
             'season_id'=> 3
         ]);
 
         Schedule::create([
-            'jour'=>'Samedi',
+            'day'=>'Samedi',
             'opening_am'=>('9:00'),
             'closing_pm'=>('17:00'),
             'season_id'=> 3

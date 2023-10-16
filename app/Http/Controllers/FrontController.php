@@ -7,7 +7,6 @@ use App\Models\Season;
 use App\Models\Price;
 use App\Models\Holiday;
 
-use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
@@ -16,8 +15,8 @@ class FrontController extends Controller
      */
     public function index()
     {
-        $now = now();
-        $season = Season::where('date_début', '<=', $now)->where('date_fin', '>=', $now)->first();
+
+        $season = Season::where('date_début', '<=', now())->where('date_fin', '>=', now())->first();
         /**
          * SELECT *
          * FROM seasons

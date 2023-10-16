@@ -2,10 +2,10 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            Ajouter des vacances
+            Ajouter des fermetures
         </h2>
-        <a href="{{ route('holidays.index') }}" class="bg-red rounded-xl py-2 px-3">Retour
-            aux vacances</a>
+        <a href="{{ route('holidays.index') }}" class="bg-red-400 rounded-xl py-2 px-3">Retour
+            aux fermetures</a>
     </x-slot>
 
     <div class="flex justify-center relative overflow-x-auto mt-12 max-w-xl mx-auto px-8">

@@ -4,7 +4,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
             modifier des dates
         </h2>
-        <a href="{{ route('holidays.index') }}" class="bg-red-400 rounded-md py-2 px-3">Retour aux vacances</a>
+        <a href="{{ route('holidays.index') }}" class="bg-red-400 rounded-md py-2 px-3">Retour aux fermetures</a>
     </x-slot>
 {{-- L'attribut action du formulaire est défini avec la méthode route('holiday.update', $holiday),
  ce qui indique que lorsque le formulaire est soumis,
