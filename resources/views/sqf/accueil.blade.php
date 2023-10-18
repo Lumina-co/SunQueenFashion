@@ -17,7 +17,7 @@
             {{-- holidays BDD --}}
             <div class="bg-black1 rounded-2xl lg:w-2/4   text-white shadow-2xl ">
                 @if($holiday != null)
-                <div class="flex w-full justify-center font-semibold rounded-t-xl lg:text-2xl lg:px-4 py-3 bg-red1 text-white">
+                <div class="flex w-full justify-center font-semibold md:rounded-t-xl lg:text-2xl lg:px-4 py-3 bg-red1 text-white">
                     <div class="">{{ $holiday->description}}</div>
                     <div class="mx-1">du {{ Carbon\Carbon::parse($holiday->date_début)->format('d/m/Y') }}</div>
                     <div class="">au {{ Carbon\Carbon::parse($holiday->date_fin)->format('d/m/Y') }} inclus</div>
@@ -31,21 +31,37 @@
                         @foreach ($schedules as $schedule)
                         <div class="flex justify-between lg:text-2xl">
                             <div class="font-semibold pr-8 -ml-3 md:px-4 lg:px-4 "> {{ $schedule->day }}</div>
-                            <div class="flex gap-8">
+                            <div class="flex gap-2">
+
+                                {{-- si seulement opening_am et closing_pm --}}
+                                @if($schedule->opening_am != null && $schedule->closing_am === null && $schedule->opening_pm === null && $schedule->closing_pm != null)
+                                <div class="">non stop de</div>
+                                <div class="">{{ Carbon\Carbon::parse($schedule->opening_am)->format('H\hi') }}</div>
+                                <div class="">à</div>
+                                <div class="">{{ Carbon\Carbon::parse($schedule->closing_pm)->format('H\hi') }}</div>
+
+                                {{-- si tous nuls --}}
+                                @elseif($schedule->opening_am === null && $schedule->closing_am === null && $schedule->opening_pm === null && $schedule->closing_pm === null)
+                                <div class="text-center">Fermé</div>
+
+                                {{-- sinon --}}
+                                @else
+                                @if($schedule->opening_am != null)
                                 <div class="flex gap-2">
                                     <div class="">{{ Carbon\Carbon::parse($schedule->opening_am)->format('H\hi') }}</div>
-                                    @if($schedule->closing_am != null)
                                     <div class="">-</div>
                                     <div class="">{{ Carbon\Carbon::parse($schedule->closing_am)->format('H\hi') }}</div>
-                                    @endif
                                 </div>
-                                <div class="flex gap-2 md:px-4 lg:px-4">
-                                    @if($schedule->opening_pm != null)
+                                @endif
+                                @if($schedule->opening_pm != null)
+                                <div class="flex gap-2">
                                     <div class="">{{ Carbon\Carbon::parse($schedule->opening_pm)->format('H\hi') }}</div>
                                     <div class="">-</div>
-                                    @endif
-                                    <div class="-mr-3">{{ Carbon\Carbon::parse($schedule->closing_pm)->format('H\hi') }}</div>
+                                    <div class="">{{ Carbon\Carbon::parse($schedule->closing_pm)->format('H\hi') }}</div>
                                 </div>
+                                @endif
+                                @endif
+
                             </div>
                         </div>
                         @endforeach
