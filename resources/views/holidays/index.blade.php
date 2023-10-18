@@ -1,20 +1,20 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="flex justify-center">
+        <div class="flex-col items-center ">
             <h2 class=" text-3xl font-bold rounded-xl w-3/4 bg-gray-800 p-4 text-white leading-tight text-center">
                 FERMETURE
             </h2>
         </div>
-        <a href="{{ route('holidays.create') }}" class="border bg-red-400 text-black-400 rounded-2xl shadow-lg py-2 px-3">Ajouter des vancances</a>
+        <a href="{{ route('holidays.create') }}" class="border bg-red-400 text-black-400 rounded-2xl shadow-lg py-2 px-3">Ajouter des fermetures</a>
     </x-slot>
     <div class="flex justify-center items-center ">
         {{-- tableau + nom des colonnes --}}
         <table class="w-full text-md text-left  text-black bg-gray-400">
             <thead class="text-md  ">
                 <tr>
-                    <th scope="col" class="px-6 py-3 border-2 text-center">date de début</th>
-                    <th scope="col" class="px-6 py-3 border-2 text-center">date de fin</th>
-                    <th scope="col" class="px-6 py-3 border-2 text-center">description</th>
+                    <th scope="col" class="px-6 py-3 border-2 text-center">Date de début</th>
+                    <th scope="col" class="px-6 py-3 border-2 text-center">Date de fin</th>
+                    <th scope="col" class="px-6 py-3 border-2 text-center">Description</th>
                     <th scope="col" class="px-6 py-3 text-center border-2">Actions</th>
                 </tr>
             </thead>

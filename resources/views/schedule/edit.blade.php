@@ -18,7 +18,8 @@
 {{-- Les directives @csrf et @method('PUT') sont des directives Blade spécifiques à Laravel.
 @csrf génère un champ de protection contre les attaques CSRF (Cross-Site Request Forgery) pour sécuriser le formulaire,
  et @method('PUT') spécifie que la méthode HTTP utilisée pour la requête est PUT --}}
-            @method('PUT') //PUT: modifie
+            @method('PUT')
+            {{-- PUT: modifie --}}
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="day">jour</label>
                 <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="day" name="day" value="{{ $schedule->day}}">

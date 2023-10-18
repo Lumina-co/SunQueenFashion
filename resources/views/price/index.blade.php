@@ -14,8 +14,8 @@
         <table class="w-full text-md text-left text-black bg-gray-400">
             <thead class="text-xs  uppercase bg-topaz border-2 ">
                 <tr>
-                    <th scope="col" class="px-6 py-3 text-center border-2">durée</th>
-                    <th scope="col" class="px-6 py-3 text-center border-2">prix</th>
+                    <th scope="col" class="px-6 py-3 text-center border-2">Durée</th>
+                    <th scope="col" class="px-6 py-3 text-center border-2">Prix</th>
                     <th scope="col" class="px-6 py-3 text-center border-2">Actions</th>
                 </tr>
             </thead>

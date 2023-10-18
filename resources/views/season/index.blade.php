@@ -14,9 +14,9 @@
                     <thead class="text-md border-2">
                         <tr>
                             <th scope="col" class="px-6 py-3">id</th>
-                            <th scope="col" class="px-6 py-3">nom</th>
-                            <th scope="col" class="px-6 py-3">heure de début</th>
-                            <th scope="col" class="px-6 py-3">heure de fin</th>
+                            <th scope="col" class="px-6 py-3">Nom</th>
+                            <th scope="col" class="px-6 py-3">Heure de début</th>
+                            <th scope="col" class="px-6 py-3">Heure de fin</th>
                             <th scope="col" class="px-6 py-3 text-center">Actions</th>
 
                         </tr>

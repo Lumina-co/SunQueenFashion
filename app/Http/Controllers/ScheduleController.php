@@ -70,11 +70,12 @@ class ScheduleController extends Controller
     {
         $request->validate([
             'day' => 'required',
-            'opening_am' => 'required',
+            'opening_am' => 'nullable',
             //NOT NULL
-            'closing_am' => 'required',
-            'opening_pm' => 'required',
-            'closing_pm' => 'required',
+            'closing_am' => 'nullable',
+            'opening_pm' => 'nullable',
+            'closing_pm' => 'nullable',
+            'season' => 'required'
         ]);
 
         $schedule = new Schedule; // objet schedule de type model
@@ -84,6 +85,7 @@ class ScheduleController extends Controller
         $schedule->closing_am = $request->closing_am;
         $schedule->opening_pm = $request->opening_pm;
         $schedule->closing_pm = $request->closing_pm;
+        $schedule->season_id = $request->season;
 
 
         $schedule->save();
@@ -116,10 +118,11 @@ class ScheduleController extends Controller
         // Validez les données entrées par l'utilisateur
         $request->validate([
             'day' => 'required',
-            'opening_am' => 'required',
-            'closing_am' => 'required',
-            'opening_pm' => 'required',
-            'closing_pm' => 'required',
+            'opening_am' => 'nullable',
+            'closing_am' => 'nullable',
+            'opening_pm' => 'nullable',
+            'closing_pm' => 'nullable',
+
         ]);
 
         // Mettez à day les valeurs du modèle seulement si les validations passent

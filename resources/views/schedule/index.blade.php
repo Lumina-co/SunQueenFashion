@@ -31,12 +31,12 @@
                 <table class="w-full  text-md text-left text-black ">
                     <thead class="text-md bg bg-gray-300 border-2">
                         <tr>
-                          
+
                             <th scope="col" class="px-6 py-3 text-center border-2">Jour</th>
-                            <th scope="col" class="px-6 py-3 text-center border-2">heure ouverture matin</th>
-                            <th scope="col" class="px-6 py-3 text-center border-2">heure fermeture matin</th>
-                            <th scope="col" class="px-6 py-3 text-center border-2">heure ouverture après-midi</th>
-                            <th scope="col" class="px-6 py-3 text-center border-2">heure fermeture après-midi</th>
+                            <th scope="col" class="px-6 py-3 text-center border-2">Heure ouverture matin</th>
+                            <th scope="col" class="px-6 py-3 text-center border-2">Heure fermeture matin</th>
+                            <th scope="col" class="px-6 py-3 text-center border-2">Heure ouverture après-midi</th>
+                            <th scope="col" class="px-6 py-3 text-center border-2">Heure fermeture après-midi</th>
                             <th scope="col" class="px-6 py-3 text-center border-2">Actions</th>
                         </tr>
                     </thead>
