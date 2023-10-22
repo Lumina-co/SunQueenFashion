@@ -7,7 +7,7 @@
                 <img src="/assets/mode.png" alt="image_mode_accessoire" class="w-full lg:h-[500px] opacity-80">
             </div>
             <div class="absolute inset-0 flex items-center justify-center">
-                <img src="/assets/logo-page.png" alt="logo" class="w-1/2 h-1/2">
+                <img src="/assets/logo.svg" alt="logo" class="w-3/4 h-1/2">
             </div>
         </div>
 
@@ -33,7 +33,7 @@
                             <div class="font-semibold pr-8 -ml-3 md:px-4 lg:px-4 "> {{ $schedule->day }}</div>
                             <div class="flex gap-2">
 
-                                {{-- si seulement opening_am et closing_pm --}}
+                                {{-- si seulement opening_am et closing_pm # de nul --}}
                                 @if($schedule->opening_am != null && $schedule->closing_am === null && $schedule->opening_pm === null && $schedule->closing_pm != null)
                                 <div class="">non stop de</div>
                                 <div class="">{{ Carbon\Carbon::parse($schedule->opening_am)->format('H\hi') }}</div>
@@ -83,11 +83,11 @@
         </div>
 
         {{-- choices section --}}
-        <div class="flex flex-col lg:flex-row h-auto lg:mx-20">
-            <div class="relative w-full lg:w-1/2 group overflow-hidden">
-                <img src="{{ asset('assets/bronzage2.svg') }}" alt="photo_uv" class="w-full rounded-md object-cover h-60 lg:h-full flex justify-center items-center transition-all duration-500 transform scale-100 group-hover:scale-110">
-                <div class="lg:py-12 gap-8 absolute flex flex-col inset-x-0 bottom-0 justify-center lg:backdrop-blur-md bg-white/30">
-                    <p class="mx-auto text-center text-black1 transition-all duration-500 font-poppins font-bold text-lg lg:text-2xl flex">
+        <div class="flex flex-col lg:flex-row h-auto lg:w-3/4 lg:mx-20">
+            <div class="relative w-full lg:w-2/4 group overflow-hidden">
+                <img src="{{ asset('assets/bronzage2.svg') }}" alt="photo_uv" class="w-full  rounded-md object-cover h-60 lg:h-full flex justify-center items-center transition-all duration-500 transform scale-100 group-hover:scale-110">
+                <div class="gap-8  absolute flex flex-col inset-x-0 bottom-0 justify-center lg:backdrop-blur-md bg-white/30">
+                    <p class="mx-auto w-3/4 text-center text-black1 transition-all duration-500 font-poppins font-bold text-lg lg:text-2xl flex">
                         Obtenez un éclat d'été toute l'année ! Découvrez nos séances UV.
                     </p>
                     <a href="#uv" class="flex hover:scale-125 transition-transform mx-auto items-center py-1 mb-4 justify-center font-semibold border bg-dune text-black1 rounded-3xl shadow-lg pl-4 pr-6 mt-4 lg:mt-8">
@@ -98,10 +98,10 @@
                     </a>
                 </div>
             </div>
-            <div class="relative w-full lg:w-1/2 group overflow-hidden">
+            <div class="relative w-full lg:w-2/4 group overflow-hidden">
                 <img src="{{ asset('assets/IMG_2176.jpg') }}" alt="photo_boutique" class="w-full rounded-md object-cover h-60 lg:h-full flex justify-center items-center transition-all duration-500 transform scale-100 group-hover:scale-110">
-                <div class="lg:py-12 gap-8 absolute flex flex-col inset-x-0 bottom-0 justify-center backdrop-blur-md bg-white/30">
-                    <p class="mx-auto text-center text-black1 transition-all duration-500 font-poppins font-bold text-lg lg:text-2xl flex">
+                <div class=" gap-8 absolute flex flex-col inset-x-0 bottom-0 justify-center lg:backdrop-blur-md bg-white/30">
+                    <p class="mx-auto w-3/4 text-center text-black1 transition-all duration-500 font-poppins font-bold text-lg lg:text-2xl flex">
                         Découvrez notre sélection exclusive de mode et d'accessoires.
                     </p>
                     <a href="#mode" class="flex hover:scale-125 transition-transform mx-auto items-center py-1 mb-4 justify-center font-semibold border bg-dune text-black1 rounded-3xl shadow-lg pl-4 pr-6 mt-4 lg:mt-8">
@@ -297,8 +297,9 @@
 
             <!-- Map -->
             <div id="map" class="w-3/4 mx-auto gap-8 mt-8 h-80 md:h-96 lg:h-128  "></div>
-            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-vF5wZ4u0zH1uu5RdUb7BSizIhm4kOGz1COlD1l+MBAo=" crossorigin=""></script>
-
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+             integrity="sha256-vF5wZ4u0zH1uu5RdUb7BSizIhm4kOGz1COlD1l+MBAo=" crossorigin="">
+            </script>
             <script>
                 var map = L.map('map').setView([47.62249091867886, 6.156544022729926], 15); //coordonnées
                 L.marker([47.62249091867886, 6.156544022729926]).addTo(map);

@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('seasons', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->dateTime('date_début');
-            $table->dateTime('date_fin');
+            $table->date('date_début');
+            $table->date('date_fin');
             $table->Timestamps();
         });
     }

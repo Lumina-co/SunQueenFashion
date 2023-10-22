@@ -76,7 +76,7 @@ class SeasonController extends Controller
             'date_fin' => 'required',
         ]);
 
-         // Mettez à nomr les valeurs du modèle seulement si les validations passent
+         // Met à jour les valeurs du modèle seulement si les validations passent
         $season->nom = $request->nom;
         $season->date_début = $request->date_début;
         $season->date_fin = $request->date_fin;

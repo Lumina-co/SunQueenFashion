@@ -8,7 +8,7 @@ use Illuminate\Support\Carbon;
 
 class UpdateSeasons extends Command
 {
-    protected $signature = 'seasons:update';
+    protected $signature = 'seasons:update';//commande php artisan season: update
     protected $description = 'Mise à jour automatique des saisons chaque année';
 
     public function __construct()

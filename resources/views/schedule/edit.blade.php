@@ -6,11 +6,8 @@
         </h2>
         <a href="{{ route('schedule.index') }}" class="bg-red-400 rounded-xl py-2 px-3">Retour aux horaires</a>
     </x-slot>
-{{-- L'attribut action du formulaire est défini avec la méthode route('schedule.update', $schedule),
- ce qui indique que lorsque le formulaire est soumis,
- il enverra une requête POST à la route nommée 'schedule.update' avec le paramètre $tschedule --}}
 
-{{-- formulaire d'édition --}}
+{{-- formulaire edite --}}
     <div class="flex justify-center  relative overflow-x-auto m-12 max-w-xl mx-auto px-8">
         <form class="flex flex-col text-sm text-gray-500 uppercase  bg-gray-100 rounded shadow-lg p-8 mt-8 dark:bg-gray-700 dark:text-gray-400" action='{{ route('schedule.update', $schedule)}}' method="post">
             {{-- method post pour stoker --}}

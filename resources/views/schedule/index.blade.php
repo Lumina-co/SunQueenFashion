@@ -22,6 +22,7 @@
                         @foreach ($seasons as $season)
                         <option value="{{ $season->id }}" @if ($selectedSeason==$season->id) selected @endif>{{ $season->nom }}</option>
                         @endforeach
+                        {{--  vérifie si l'ID de la saison en cours ($season->id) correspond à la saison sélectionnée ($selectedSeason) pré-sélection de la saison --}}
                     </select>
                     <button type="submit" class="bg-white p-2 m-4 rounded-xl">Filtrer</button>
                 </form>

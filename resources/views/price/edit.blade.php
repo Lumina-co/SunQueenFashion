@@ -19,7 +19,7 @@
 
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="minutes">minutes</label>
-                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="time" id="minutes" name="minutes" value="{{ $price->minutes}}">
+                <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="number" id="minutes" name="minutes" value="{{ $price->minutes}}">
             </div>
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="prix">prix</label>

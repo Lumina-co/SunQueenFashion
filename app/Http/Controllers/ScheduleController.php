@@ -15,8 +15,8 @@ class ScheduleController extends Controller
     public function index()
     {
 
-        $seasons = Season::all();
-        $selectedSeason = request()->input('season'); // Récupérez la saison sélectionnée depuis la requête
+        $seasons = Season::all(); // requête Eloquent qui récupère toute la table des saisons
+        $selectedSeason = request()->input('season'); // Récupérez la saison sélectionnée depuis l'input
 
 
 
@@ -27,7 +27,10 @@ class ScheduleController extends Controller
                 ->first()->id;
         }
 
-        // Si une saison est sélectionnée, récupérer les horaires correspondants
+        /**
+          * récupère tous les horaires associés à la saison sélectionnée (soit celle choisie par l'utilisateur,
+          * soit la saison actuelle si aucune sélection n'a été faite).
+        */
         $schedules = Schedule::where('season_id', $selectedSeason)->get();
 
         //................requête SQL....................................
@@ -36,17 +39,17 @@ class ScheduleController extends Controller
         *SELECT * FROM seasons;
 
          *   -- Récupérez l'ID de la saison sélectionnée depuis la requête (par exemple, 'selectedSeasonID')
-          *  SET @selectedSeasonID = ...; -- Remplacez ceci par la valeur réelle récupérée depuis la requête
+         *  SET @selectedSeasonID = ...; -- Remplacez ceci par la valeur réelle récupérée depuis la requête
 
-           * -- Si une saison est sélectionnée
-            *IF @selectedSeasonID IS NOT NULL THEN
-             *   -- Sélectionnez tous les horaires correspondant à l'ID de la saison sélectionnée
-              *  SELECT * FROM schedules WHERE season_id = @selectedSeasonID;
-            *ELSE
-              *  -- Si aucune saison n'est sélectionnée, affichez tous les horaires
-               * SELECT * FROM schedules;
-            *END IF;
-             */
+         * -- Si une saison est sélectionnée
+         *IF @selectedSeasonID IS NOT NULL THEN
+         *   -- Sélectionnez tous les horaires correspondant à l'ID de la saison sélectionnée
+         *  SELECT * FROM schedules WHERE season_id = @selectedSeasonID;
+         *  ELSE
+         *  -- Si aucune saison n'est sélectionnée, affichez tous les horaires
+         * SELECT * FROM schedules;
+         *END IF;
+         */
 
 
         return view('schedule.index', compact('schedules', 'seasons', 'selectedSeason'));
@@ -66,12 +69,11 @@ class ScheduleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request) // la fonction a 2 parametre : objet de type model et la variable définie
+    public function store(Request $request) // request contient les données envoyé par le formulaire
     {
         $request->validate([
-            'day' => 'required',
+            'day' => 'required',   //NOT NULL
             'opening_am' => 'nullable',
-            //NOT NULL
             'closing_am' => 'nullable',
             'opening_pm' => 'nullable',
             'closing_pm' => 'nullable',
@@ -80,12 +82,14 @@ class ScheduleController extends Controller
 
         $schedule = new Schedule; // objet schedule de type model
         $schedule->day = $request->day;
-        $schedule->opening_am = $request->opening_am; // champs de l'objet
-        // prend le champs nom dans le formulaire et l'assigne dans la variable schedule
+        //Affecte la valeur du champ 'day' du formulaire à la propriété 'day' du modèle Schedule
+        $schedule->opening_am = $request->opening_am;
+
         $schedule->closing_am = $request->closing_am;
         $schedule->opening_pm = $request->opening_pm;
         $schedule->closing_pm = $request->closing_pm;
-        $schedule->season_id = $request->season;
+        $schedule->season_id = $request->season_id;
+        //relie cet horaire à une saison
 
 
         $schedule->save();
@@ -125,7 +129,7 @@ class ScheduleController extends Controller
 
         ]);
 
-        // Mettez à day les valeurs du modèle seulement si les validations passent
+        // Met à jout les valeurs du modèle seulement si les validations passent
         $schedule->day = $request->day;
         $schedule->opening_am = $request->opening_am;
         $schedule->closing_am = $request->closing_am;
