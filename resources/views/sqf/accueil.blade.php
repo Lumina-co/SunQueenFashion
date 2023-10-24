@@ -15,7 +15,7 @@
         <div class="flex justify-center relative lg:-mt-24 items-center  w-full ">
 
             {{-- holidays BDD --}}
-            <div class="bg-black1 rounded-b-2xl lg:w-2/4 w-full  text-white shadow-2xl ">
+            <div class="bg-black1 rounded-b-2xl lg:rounded-2xl lg:w-2/4 w-full  text-white shadow-2xl ">
                 @if($holiday != null)
                 <div class="flex w-full justify-center font-semibold md:rounded-t-xl lg:text-2xl lg:px-4  bg-red1 text-white">
                     <div class="">{{ $holiday->description}}</div>
