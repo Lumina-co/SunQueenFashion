@@ -15,9 +15,9 @@
         <div class="flex justify-center relative lg:-mt-24 items-center  w-full ">
 
             {{-- holidays BDD --}}
-            <div class="bg-black1 rounded-2xl lg:w-2/4   text-white shadow-2xl ">
+            <div class="bg-black1 rounded-b-2xl lg:w-2/4 w-full  text-white shadow-2xl ">
                 @if($holiday != null)
-                <div class="flex w-full justify-center font-semibold md:rounded-t-xl lg:text-2xl lg:px-4 py-3 bg-red1 text-white">
+                <div class="flex w-full justify-center font-semibold md:rounded-t-xl lg:text-2xl lg:px-4  bg-red1 text-white">
                     <div class="">{{ $holiday->description}}</div>
                     <div class="mx-1">du {{ Carbon\Carbon::parse($holiday->date_début)->format('d/m/Y') }}</div>
                     <div class="">au {{ Carbon\Carbon::parse($holiday->date_fin)->format('d/m/Y') }} inclus</div>
@@ -90,7 +90,7 @@
                     <p class="mx-auto w-3/4 text-center text-black1 transition-all duration-500 font-poppins font-bold text-lg lg:text-2xl flex">
                         Obtenez un éclat d'été toute l'année ! Découvrez nos séances UV.
                     </p>
-                    <a href="#uv" class="flex hover:scale-125 transition-transform mx-auto items-center py-1 mb-4 justify-center font-semibold border bg-dune text-black1 rounded-3xl shadow-lg pl-4 pr-6 mt-4 lg:mt-8">
+                    <a href="#uv" class="flex hover:scale-125 transition-transform mx-auto items-center py-2 mb-4 justify-center font-semibold border bg-dune animate-bounce text-black1 rounded-3xl shadow-lg pl-4 pr-6 mt-4 lg:mt-8">
                         <svg class="w-6 h-6 mr-2 p-1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                             <path fill="#f9f5f5" d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6l-6 6l-1.41-1.41z" />
                         </svg>
@@ -104,7 +104,7 @@
                     <p class="mx-auto w-3/4 text-center text-black1 transition-all duration-500 font-poppins font-bold text-lg lg:text-2xl flex">
                         Découvrez notre sélection exclusive de mode et d'accessoires.
                     </p>
-                    <a href="#mode" class="flex hover:scale-125 transition-transform mx-auto items-center py-1 mb-4 justify-center font-semibold border bg-dune text-black1 rounded-3xl shadow-lg pl-4 pr-6 mt-4 lg:mt-8">
+                    <a href="#mode" class="flex hover:scale-125 transition-transform mx-auto items-center py-2 mb-4 justify-center font-semibold border bg-dune animate-bounce text-black1 rounded-3xl shadow-lg pl-4 pr-6 mt-4 lg:mt-8">
                         <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                             <path fill="#f9f5f5" d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6l-6 6l-1.41-1.41z" />
                         </svg>
@@ -127,7 +127,7 @@
                 </div>
                 <div class="w-2/4">
                     <div class="">
-                        <img class="w-full rounded-md" src="{{ asset('assets/img_planche.svg') }}" alt="photo_uv ">
+                        <img class=" w-full rounded-md" src="{{ asset('assets/img_planche.svg') }}" alt="photo_uv ">
                     </div>
                     <div class="absolute flex justify-between gap-8">
                         <div class="-translate-x-28 -translate-y-56">

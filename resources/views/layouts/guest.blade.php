@@ -24,33 +24,37 @@
 <body class="w-full">
 
     <header>
+
         {{-- desktop menu --}}
         <nav class="hidden lg:flex justify-between bg-black1 shadow-lg">
             <div class="ml-8">
                 <x-application-logo />
             </div>
+            @if(Request::route()->getName() !== 'sqf.CGU') {{-- Vérifie si la route n'est pas CGU --}}
             <div class="flex items-center space-x-20">
-                <a href="{{ route('sqf.accueil') }}" class="group flex items-center text-white hover:text-red1 transition-colors duration-300">
+                    <a href="#uv" class="group text-xl flex items-center text-white hover:text-red1 transition-colors duration-300">
+                        Solarium
+                    </a>
+
+                    <a href="#mode" class="group text-xl flex items-center text-white hover:text-red1 transition-colors duration-300">
+                        Mode
+                    </a>
+
+                    <a href="#boutique" class="group text-xl flex items-center text-white hover:text-red1 transition-colors duration-300">
+                        Boutique
+                    </a>
+
+                    <a href="#contact" class="group text-xl flex items-center text-white hover:text-red1 transition-colors duration-300">
+                        Contact
+                    </a>
+            </div>
+            @else {{-- Si c'est la page CGU, affichez uniquement le lien d'accueil --}}
+            <div class="flex items-center space-x-20">
+                <a href="{{ route('sqf.accueil') }}" class="group flex items-center text-xl text-white hover:text-red1 transition-colors duration-300">
                     Accueil
                 </a>
-
-                <a href="#uv" class="group flex items-center text-white hover:text-red1 transition-colors duration-300">
-                    Solarium
-                </a>
-
-                <a href="#mode" class="group flex items-center text-white hover:text-red1 transition-colors duration-300">
-                    Mode
-                </a>
-
-                <a href="#boutique" class="group flex items-center text-white hover:text-red1 transition-colors duration-300">
-                    Boutique
-                </a>
-
-                <a href="#contact" class="group flex items-center text-white hover:text-red1 transition-colors duration-300">
-                    Contact
-                </a>
             </div>
-
+        @endif
             {{-- social réseaux --}}
             <div class="flex m-8 mr-16">
                 <ul class="flex gap-4 ">
@@ -97,7 +101,6 @@
                     </li>
                 </ul>
             </div>
-
         </nav>
 
         {{-- mobile menu --}}
@@ -112,11 +115,7 @@
             </button>
 
             <div id="menu" class="flex-col flex hidden  justify-center gap-4 p-4 items-center">
-
-                <a href="{{ route('sqf.accueil') }}" class="group flex items-center text-white hover:text-red1 transition-colors duration-300">
-                    Accueil
-                </a>
-
+                @if(Request::route()->getName() !== 'sqf.CGU') {{-- Vérifie si la route n'est pas CGU --}}
                 <a href="#uv" class="group flex items-center  text-white hover:text-red1 transition-colors duration-300">
                     Solarium
                 </a>
@@ -132,7 +131,13 @@
                 <a href="#contact" class="group flex items-center text-white hover:text-red1 transition-colors duration-300">
                     Contact
                 </a>
-
+                @else {{-- Si c'est la page CGU, affichez uniquement le lien d'accueil --}}
+                <div class="flex items-center space-x-20">
+                    <a href="{{ route('sqf.accueil') }}" class="group flex items-center text-xl text-white hover:text-red1 transition-colors duration-300">
+                        Accueil
+                    </a>
+                </div>
+            @endif
                 {{-- social reseaux --}}
                 <div class="flex  py-4">
                     <ul class="flex gap-8">
@@ -180,8 +185,8 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
+
         </nav>
 
     </header>
