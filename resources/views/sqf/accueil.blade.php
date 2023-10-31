@@ -292,7 +292,7 @@
 
             <div class="flex p-4 gap-4">
                 <img src="{{ asset('assets/mail.svg') }}" alt="icone_mail">
-                <a href mailto="email">sunqueen.fashion@yahoo.com</a>
+                <a href mailto="sunqueen.fashion@yahoo.com">sunqueen.fashion@yahoo.com</a>
             </div>
 
             <!-- Map -->
