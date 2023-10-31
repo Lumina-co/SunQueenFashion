@@ -17,6 +17,7 @@
                      {{-- method get pour afficher  --}}
                     <label class="m-16  text-xl" for="season">Saison :</label>
                     <select name="season" id="season">
+                        
                         {{-- menu déroulant --}}
                         <option value="">Toutes les saisons</option>
                         @foreach ($seasons as $season)

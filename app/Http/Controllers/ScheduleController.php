@@ -118,8 +118,11 @@ class ScheduleController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Schedule $schedule)
+      //  Cette méthode accepte deux paramètres : $request (qui contient les données soumises
+            //par le formulaire) et $schedule (qui est un objet de modèle schedule représentant
+            //  l'enregistrement dans la base de données que l'on souhaite mettre à jour).
     {
-        // Validez les données entrées par l'utilisateur
+        // Valide les données entrées par l'utilisateur
         $request->validate([
             'day' => 'required',
             'opening_am' => 'nullable',
@@ -129,7 +132,7 @@ class ScheduleController extends Controller
 
         ]);
 
-        // Met à jout les valeurs du modèle seulement si les validations passent
+        // Met à jour les valeurs du modèle seulement si les validations passent
         $schedule->day = $request->day;
         $schedule->opening_am = $request->opening_am;
         $schedule->closing_am = $request->closing_am;

@@ -26,19 +26,19 @@
 
                 {{-- schedules BDD --}}
                 <div class="flex-col">
-                    <h2 class="text-center py-6 mx-8 font-poppins font-bold text-2xl border-b-2 border-white">HORAIRES</h2>
+                    <div class="text-center py-6 mx-8 font-poppins font-bold text-2xl border-b-2 border-white">HORAIRES</div>
                     <div class="p-8 lg:px-8 lg:py-8 flex flex-col gap-y-4">
                         @foreach ($schedules as $schedule)
-                        <div class="flex justify-between lg:text-2xl">
+                        <div class="flex justify-between flex-col sm:flex-row lg:text-2xl">
                             <div class="font-semibold pr-8 -ml-3 md:px-4 lg:px-4 "> {{ $schedule->day }}</div>
                             <div class="flex gap-2">
 
                                 {{-- si seulement opening_am et closing_pm # de nul --}}
                                 @if($schedule->opening_am != null && $schedule->closing_am === null && $schedule->opening_pm === null && $schedule->closing_pm != null)
                                 <div class="">non stop de</div>
-                                <div class="">{{ Carbon\Carbon::parse($schedule->opening_am)->format('H\hi') }}</div>
-                                <div class="">à</div>
-                                <div class="">{{ Carbon\Carbon::parse($schedule->closing_pm)->format('H\hi') }}</div>
+                                <time datetime="" >{{ Carbon\Carbon::parse($schedule->opening_am)->format('H:i') }}</time>
+                                <div>à</div>
+                                <time datetime="">{{ Carbon\Carbon::parse($schedule->closing_pm)->format('H:i') }}</time>
 
                                 {{-- si tous nuls --}}
                                 @elseif($schedule->opening_am === null && $schedule->closing_am === null && $schedule->opening_pm === null && $schedule->closing_pm === null)
@@ -48,16 +48,16 @@
                                 @else
                                 @if($schedule->opening_am != null)
                                 <div class="flex gap-2">
-                                    <div class="">{{ Carbon\Carbon::parse($schedule->opening_am)->format('H\hi') }}</div>
-                                    <div class="">-</div>
-                                    <div class="">{{ Carbon\Carbon::parse($schedule->closing_am)->format('H\hi') }}</div>
+                                    <time datetime="">{{ Carbon\Carbon::parse($schedule->opening_am)->format('H:i') }}</time>
+                                    <div>-</div>
+                                    <time datetime="">{{ Carbon\Carbon::parse($schedule->closing_am)->format('H:i') }}</time>
                                 </div>
                                 @endif
                                 @if($schedule->opening_pm != null)
                                 <div class="flex gap-2">
-                                    <div class="">{{ Carbon\Carbon::parse($schedule->opening_pm)->format('H\hi') }}</div>
-                                    <div class="">-</div>
-                                    <div class="">{{ Carbon\Carbon::parse($schedule->closing_pm)->format('H\hi') }}</div>
+                                    <time datetime="">{{ Carbon\Carbon::parse($schedule->opening_pm)->format('H:i') }}</time>
+                                    <div>-</div>
+                                    <time datetime="">{{ Carbon\Carbon::parse($schedule->closing_pm)->format('H:i') }}</time>
                                 </div>
                                 @endif
                                 @endif
@@ -83,11 +83,11 @@
         </div>
 
         {{-- choices section --}}
-        <div class="flex flex-col lg:flex-row h-auto lg:w-3/4 lg:mx-20">
-            <div class="relative w-full lg:w-2/4 group overflow-hidden">
-                <img src="{{ asset('assets/bronzage2.svg') }}" alt="photo_uv" class="w-full  rounded-md object-cover h-60 lg:h-full flex justify-center items-center transition-all duration-500 transform scale-100 group-hover:scale-110">
-                <div class="gap-8  absolute flex flex-col inset-x-0 bottom-0 justify-center lg:backdrop-blur-md bg-white/30">
-                    <p class="mx-auto w-3/4 text-center text-black1 transition-all duration-500 font-poppins font-bold text-lg lg:text-2xl flex">
+        <div class="flex flex-col lg:flex-row h-auto my-16">
+            <div class="relative w-full lg:w-2/4  group overflow-hidden">
+                <img src="{{ asset('assets/bronzage2.svg') }}" alt="photo_uv" class="w-full object-cover h-60 lg:h-full flex justify-center items-center transition-all duration-500 transform scale-100 group-hover:scale-110">
+                <div class="gap-8 absolute flex flex-col inset-x-0 bottom-0 justify-center lg:backdrop-blur-md bg-white/30">
+                    <p class="mx-auto w-3/4 text-center pt-12 text-black1 transition-all duration-500 font-poppins font-bold text-lg lg:text-2xl flex">
                         Obtenez un éclat d'été toute l'année ! Découvrez nos séances UV.
                     </p>
                     <a href="#uv" class="flex hover:scale-125 transition-transform mx-auto items-center py-2 mb-4 justify-center font-semibold border bg-dune animate-bounce text-black1 rounded-3xl shadow-lg pl-4 pr-6 mt-4 lg:mt-8">
@@ -99,9 +99,9 @@
                 </div>
             </div>
             <div class="relative w-full lg:w-2/4 group overflow-hidden">
-                <img src="{{ asset('assets/IMG_2176.jpg') }}" alt="photo_boutique" class="w-full rounded-md object-cover h-60 lg:h-full flex justify-center items-center transition-all duration-500 transform scale-100 group-hover:scale-110">
+                <img src="{{ asset('assets/IMG_2176.jpg') }}" alt="photo_boutique" class="w-full object-cover h-60 lg:h-full flex justify-center items-center transition-all duration-500 transform scale-100 group-hover:scale-110">
                 <div class=" gap-8 absolute flex flex-col inset-x-0 bottom-0 justify-center lg:backdrop-blur-md bg-white/30">
-                    <p class="mx-auto w-3/4 text-center text-black1 transition-all duration-500 font-poppins font-bold text-lg lg:text-2xl flex">
+                    <p class="mx-auto w-3/4 text-center pt-12 text-black1 transition-all duration-500 font-poppins font-bold text-lg lg:text-2xl flex">
                         Découvrez notre sélection exclusive de mode et d'accessoires.
                     </p>
                     <a href="#mode" class="flex hover:scale-125 transition-transform mx-auto items-center py-2 mb-4 justify-center font-semibold border bg-dune animate-bounce text-black1 rounded-3xl shadow-lg pl-4 pr-6 mt-4 lg:mt-8">
@@ -187,8 +187,8 @@
             </div>
 
             {{-- warning panel --}}
-            <div class="border-red1  bg-red1/90 shadow-2xl w-3/4 flex mx-auto rounded-md  p-4 lg:my-20 my-16 text-bold">
-                <img class="pr-4" src="{{ asset('assets/cautionSign.svg') }}" alt="attention_avertissement">
+            <div class="border-red1  bg-red1/90 shadow-2xl w-3/4 flex flex-col sm:flex-row mx-auto rounded-md  p-4 lg:my-20 my-16 text-bold">
+                <img class="pr-4 w-10 h-10" src="{{ asset('assets/cautionSign.svg') }}" alt="attention_avertissement">
                 <p class="font-bold">
                     Art. 9 - Attention ! L'exposition aux rayonnements d'un appareil de bronzage peut provoquer des cancers de la peau et des yeux, et est responsable d'un vieillissement cutané prématuré. L'existence d'une réglementation du bronzage artificiel ne permet pas d'éliminer les risques sanitaires encourus en cas d'exposition, en particulier le risque de cancer. L'utilisation de ces appareils est interdite aux personnes de moins de 18 ans. Porter des lunettes de protection est vendu.
                 </p>
@@ -215,7 +215,7 @@
         <div id="mode" class="text-center py-8 md:py-16 lg:py-24 flex-col my-8">
             <div class="text-4xl md:text-5xl lg:text-6xl font-bold p-4 ">Bienvenue dans notre collection</div>
             <div class="text-4xl md:text-5xl lg:text-6xl lg:font-bold p-8 font-parisienne ">Mode et Accessoires!</div>
-            <div class="text-xl md:text-2xl mt-4 lg:text-3xl lg:w-2/4 w-3/4 m-auto font-bold ">Découvrez dés maintenant notre sélection tendance de nouveaux arrivages</div>
+            <div class="text-xl md:text-2xl mt-4 lg:text-3xl lg:w-2/4 w-3/4 m-auto font-bold ">Découvrez dès maintenant notre sélection tendance de nouveaux arrivages</div>
         </div>
 
         <div class="flex flex-col md:flex-row justify-center items-center gap-12 ">
@@ -282,17 +282,17 @@
         <div id="contact" class="w-full flex flex-col items-center  text-base lg:py-12 lg:text-xl  md:m-0">
             <div class="flex p-4 gap-4">
                 <img src="{{ asset('assets/icone_add.svg') }}" alt="icone_adresse">
-                <div>17 rue Georges Genoux 70000 Vesoul</div>
+                <span itemprop="address">17 rue Georges Genoux 70000 Vesoul</span>
             </div>
 
             <div class="flex p-4 gap-4 ">
                 <img src="{{ asset('assets/tel.svg') }}" alt="icone_tel">
-                <div>03 84 92 26 06</div>
+                <span itemprop="telephone">03 84 92 26 06</span>
             </div>
 
             <div class="flex p-4 gap-4">
                 <img src="{{ asset('assets/mail.svg') }}" alt="icone_mail">
-                <div>sunqueen.fashion@yahoo.com</div>
+                <a href mailto="email">sunqueen.fashion@yahoo.com</a>
             </div>
 
             <!-- Map -->

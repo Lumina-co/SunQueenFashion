@@ -12,7 +12,7 @@ class HolidaysController extends Controller
      */
     public function index()
     {
-            $holidays = Holiday::all();// dans la variable theme ce trouve les resultats de ma requete
+            $holidays = Holiday::all();
 
             return view('holidays.index', compact('holidays'));
         }
