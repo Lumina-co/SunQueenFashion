@@ -279,10 +279,10 @@
         </div>
 
         {{-- contact --}}
-        <div id="contact" class="w-full flex flex-col items-center  text-base lg:py-12 lg:text-xl  md:m-0">
+        <address id="contact" class="w-full flex flex-col items-center  text-base lg:py-12 lg:text-xl  md:m-0">
             <div class="flex p-4 gap-4">
                 <img src="{{ asset('assets/icone_add.svg') }}" alt="icone_adresse">
-                <span itemprop="address">17 rue Georges Genoux 70000 Vesoul</span>
+                <span itemprop="streetAddress">17 rue Georges Genoux 70000 Vesoul</span>
             </div>
 
             <div class="flex p-4 gap-4 ">
@@ -307,7 +307,7 @@
                 //cursor
 
             </script>
-        </div>
+        </address>
 
     </div>
 </x-guest-layout>
