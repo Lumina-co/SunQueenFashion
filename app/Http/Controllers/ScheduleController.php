@@ -16,11 +16,11 @@ class ScheduleController extends Controller
     {
 
         $seasons = Season::all(); // requête Eloquent qui récupère toute la table des saisons
-        $selectedSeason = request()->input('season'); // Récupérez la saison sélectionnée depuis l'input
+        $selectedSeason = request()->input('season'); // Récupérez la saison sélectionnée par l'utilisateur depuis l'input
 
 
 
-        // Si l'input de saison est nul, récupérer la saison actuelle
+        //vérifie d'abord  si l'utilisateur n'a pas choisi de saison,alors récupère la saison actuelle
         if ($selectedSeason === null) {
             $selectedSeason = Season::where('date_début', '<=', now())
                 ->where('date_fin', '>=', now())
@@ -69,7 +69,8 @@ class ScheduleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request) // request contient les données envoyé par le formulaire
+    public function store(Request $request)
+    // request contient les données envoyé par le formulaire
     {
         $request->validate([
             'day' => 'required',   //NOT NULL
@@ -82,7 +83,8 @@ class ScheduleController extends Controller
 
         $schedule = new Schedule; // objet schedule de type model
         $schedule->day = $request->day;
-        //Affecte la valeur du champ 'day' du formulaire à la propriété 'day' du modèle Schedule
+        //Affecte la valeur du champ 'day' du formulaire
+        // à la propriété 'day' du modèle Schedule
         $schedule->opening_am = $request->opening_am;
 
         $schedule->closing_am = $request->closing_am;

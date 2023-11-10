@@ -25,24 +25,23 @@
                 @endif
 
                 {{-- schedules BDD --}}
-                <div class="flex-col">
+                <div class="flex-col gap-16">
                     <div class="text-center py-6 mx-8 font-poppins font-bold text-2xl border-b-2 border-white">HORAIRES</div>
                     <div class="p-8 lg:px-8 lg:py-8 flex flex-col gap-y-4">
                         @foreach ($schedules as $schedule)
                         <div class="flex justify-between flex-col sm:flex-row lg:text-2xl">
-                            <div class="font-semibold pr-8 -ml-3 md:px-4 lg:px-4 "> {{ $schedule->day }}</div>
+                            <div class="font-semibold  -ml-3 md:px-4 lg:px-4 "> {{ $schedule->day }}</div>
                             <div class="flex gap-2">
-
                                 {{-- si seulement opening_am et closing_pm # de nul --}}
                                 @if($schedule->opening_am != null && $schedule->closing_am === null && $schedule->opening_pm === null && $schedule->closing_pm != null)
-                                <div class="">non stop de</div>
-                                <time datetime="" >{{ Carbon\Carbon::parse($schedule->opening_am)->format('H:i') }}</time>
+                                <div class="px-4">non stop de</div>
+                                <time datetime="">{{ Carbon\Carbon::parse($schedule->opening_am)->format('H:i') }}</time>
                                 <div>à</div>
-                                <time datetime="">{{ Carbon\Carbon::parse($schedule->closing_pm)->format('H:i') }}</time>
+                                <time datetime="px-4">{{ Carbon\Carbon::parse($schedule->closing_pm)->format('H:i') }}</time>
 
                                 {{-- si tous nuls --}}
                                 @elseif($schedule->opening_am === null && $schedule->closing_am === null && $schedule->opening_pm === null && $schedule->closing_pm === null)
-                                <div class="text-center">Fermé</div>
+                                <div>Fermé</div>
 
                                 {{-- sinon --}}
                                 @else
@@ -164,7 +163,7 @@
             {{-- Tanning booths section --}}
             <div class="flex flex-col items-center lg:flex-row lg:justify-center lg:items-start ">
                 <div class="lg:w-4/5 mx-8 lg:pl-16">
-                    <h3 class="lg:text-6xl text-4xl font-bold lg:mt-20 lg:mb-16 my-8 md:text-center mt-16  lg:-m-16 lg:text-left">NOS MACHINES</h3>
+                    <h2 class="lg:text-6xl text-4xl font-bold lg:mt-20 lg:mb-16 my-8 md:text-center mt-16  lg:-m-16 lg:text-left">NOS MACHINES</h2>
                     <div class="lg:flex flex-col lg:flex-row gap-24 w-full">
                         <img src="{{ asset('assets/img_uv4.svg') }}" alt="bronzage_soleil" class=" my-8 mx-auto lg:w-full lg:mx-0 shadow-xl rounded-md lg:mb-0">
                         <div class="lg:w-full lg:pl-8">
@@ -175,7 +174,7 @@
                     <div class="lg:flex flex-col lg:flex-row lg:mb-12 lg:mt-8 gap-20 lg:space-x-12 w-full">
                         <div class="lg:w-full lg:mt-20 my-8  ">
                             <div class="lg:text-5xl text-3xl md:text-4xl font-black font-parisienne mt-12 mb-4">Notre cabine Optima</div>
-                            <p class="text-lg lg:text-2xl leading-8">Si vous recherchez un bronzage revitalisant et des soins pour la peau, optez pour notre cabine Optima, qui booste la vitamine C et le collagène grâce à la technologie innovante Rubin Collagen Booster.</p>
+                            <p class="text-md lg:text-2xl leading-8">Si vous recherchez un bronzage revitalisant et des soins pour la peau, optez pour notre cabine Optima, qui booste la vitamine C et le collagène grâce à la technologie innovante Rubin Collagen Booster.</p>
                             <p class=" lg:pt-20 pt-16 lg:ml-20 text-lg lg:text-2xl">
                                 Avant votre séance UV, bénéficiez de l'expertise d'un professionnel diplômé! afin de vous guidez pour définir précisément votre phototype de peau, assurant ainsi une séance UV sécurisée et efficace.
                             </p>
@@ -213,8 +212,8 @@
 
         {{-- fashion section --}}
         <div id="mode" class="text-center py-8 md:py-16 lg:py-24 flex-col my-8">
-            <div class="text-4xl md:text-5xl lg:text-6xl font-bold p-4 ">Bienvenue dans notre collection</div>
-            <div class="text-4xl md:text-5xl lg:text-6xl lg:font-bold p-8 font-parisienne ">Mode et Accessoires!</div>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold p-4 ">Bienvenue dans notre collection</h2>
+            <h3 class="text-4xl md:text-5xl lg:text-6xl lg:font-bold p-8 font-parisienne ">Mode et Accessoires!</h3>
             <div class="text-xl md:text-2xl mt-4 lg:text-3xl lg:w-2/4 w-3/4 m-auto font-bold ">Découvrez dès maintenant notre sélection tendance de nouveaux arrivages</div>
         </div>
 

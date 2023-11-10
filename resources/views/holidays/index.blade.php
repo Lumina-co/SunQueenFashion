@@ -1,13 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex-col items-center ">
-            <h2 class=" text-3xl font-bold rounded-xl w-3/4 bg-gray-800 p-4 text-white leading-tight text-center">
+            <h2 class=" text-3xl font-bold font-poppins rounded-xl w-3/4 bg-gray-800 p-4 text-white leading-tight text-center">
                 FERMETURE
             </h2>
         </div>
-        <a href="{{ route('holidays.create') }}" class="border bg-red-400 text-black-400 rounded-2xl shadow-lg py-2 px-3">Ajouter des fermetures</a>
+        <a href="{{ route('holidays.create') }}" class="border bg-red-400 text-black-400 hover:bg-red-500  font-bold rounded-2xl shadow-lg py-2 px-3">Ajouter des fermetures</a>
     </x-slot>
-    <div class="flex justify-center items-center ">
+    <div class="flex justify-center my-12 items-center ">
         {{-- tableau + nom des colonnes --}}
         <table class="w-full text-md text-left  text-black bg-gray-400">
             <thead class="text-md  ">

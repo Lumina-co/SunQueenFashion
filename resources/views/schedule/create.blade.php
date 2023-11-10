@@ -1,10 +1,10 @@
 <x-app-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            Ajouter un horaire
-        </h2>
-        <a href="{{ route('schedule.index') }}" class="bg-red-400 text-black rounded-2xl py-2 px-4">Retour
+        <h2 class=" bg-gray-800 p-4 text-3xl w-3/4 font-bold text-white rounded-xl leading-tight text-center">
+             Ajouter un horaires
+       </h2>
+        <a href="{{ route('schedule.index') }}" class="bg-gray-400 text-black rounded-2xl py-2 px-4">Retour
             aux horaires</a>
     </x-slot>
 
@@ -20,7 +20,7 @@
                 <option value="{{ $season->id }}" @if ($season->id) selected @endif>{{ $season->nom }}</option>
                 @endforeach
             </select>
-            <button type="submit" class="bg-white p-2 m-4 rounded-xl">Filtrer</button>
+            <button type="submit" class="bg-red-200 hover:bg-red-300 p-2 m-4 rounded-md">Filtrer</button>
 
             <div class="py-4">
                 <label class="font-semibold text-gray-500 " for="day">Jour</label>

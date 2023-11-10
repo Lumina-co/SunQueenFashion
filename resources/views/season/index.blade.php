@@ -1,14 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex-col justify-center">
-            <h2 class="text-3xl font-bold text-white rounded-xl w-3/4  bg-gray-800 p-4 leading-tight text-center">
+            <h2 class="text-3xl font-bold font-poppins text-white rounded-xl w-3/4  bg-gray-800 p-4 leading-tight text-center">
                 SAISONS
             </h2>
         </div>
 
-        <a href="{{ route('season.create') }}" class="border bg-red-400 text-black-400 rounded-2xl  shadow-lg py-2 px-3">Ajouter des dates</a>
+        <a href="{{ route('season.create') }}" class="border bg-red-400 hover:bg-red-500 font-bold text-black-400 rounded-2xl  shadow-lg py-2 px-3">Ajouter des dates</a>
     </x-slot>
-    <div class="flex justify-center items-center ">
+    <div class="flex justify-center my-12 items-center ">
             {{-- tableau + nom des colonnes --}}
                 <table class="w-full text-md text-left  text-black bg-gray-400">
                     <thead class="text-md border-2">

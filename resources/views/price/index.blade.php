@@ -1,11 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex-col justify-center">
-            <h2 class=" text-3xl font-bold w-3/4 rounded-xl bg-gray-800 p-4 text-white leading-tight text-center">
+            <h2 class=" text-3xl font-poppins font-bold w-3/4 rounded-xl bg-gray-800 p-4 text-white leading-tight text-center">
                 TARIFS
             </h2>
         </div>
-        <a href="{{ route('price.create') }}" class="border bg-red-400 rounded-2xl shadow-lg py-2 px-3">Ajouter un tarif</a>
+        <a href="{{ route('price.create') }}" class="border bg-red-400 hover:bg-red-500 font-bold rounded-2xl shadow-lg py-2 px-3">Ajouter un tarif</a>
     </x-slot>
     <div class="flex my-12 justify-center items-center ">
 

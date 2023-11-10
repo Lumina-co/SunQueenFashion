@@ -1,8 +1,8 @@
 <x-app-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            Ajouter des dates
+        <h2 class="text-3xl font-bold text-white rounded-xl w-3/4  bg-gray-800 p-4 leading-tight text-center">
+            Ajouter des saisons
         </h2>
         <a href="{{ route('season.index') }}" class="bg-red-400 rounded-xl py-2 px-3">Retour
             aux saisons</a>

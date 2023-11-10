@@ -24,7 +24,6 @@
 <body class="w-full">
 
     <header>
-
         {{-- desktop menu --}}
         <nav class="hidden lg:flex justify-between bg-black1 shadow-lg">
             <div class="ml-8">
@@ -33,20 +32,14 @@
             @if(Request::route()->getName() !== 'sqf.CGU') {{-- Vérifie si la route n'est pas CGU --}}
             <div class="flex items-center space-x-20">
                 <a href="#uv" class="group text-xl flex items-center gap-1 text-white hover:text-red1 transition-colors duration-300">
-                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M11 4V1h2v3h-2Zm0 19v-3h2v3h-2Zm9-10v-2h3v2h-3ZM1 13v-2h3v2H1Zm17.7-6.3l-1.4-1.4l1.75-1.8l1.45 1.45l-1.8 1.75ZM4.95 20.5L3.5 19.05l1.8-1.75l1.4 1.4l-1.75 1.8Zm14.1 0l-1.75-1.8l1.4-1.4l1.8 1.75l-1.45 1.45ZM5.3 6.7L3.5 4.95L4.95 3.5L6.7 5.3L5.3 6.7ZM12 18q-2.5 0-4.25-1.75T6 12q0-2.5 1.75-4.25T12 6q2.5 0 4.25 1.75T18 12q0 2.5-1.75 4.25T12 18Zm0-2q1.675 0 2.838-1.163T16 12q0-1.675-1.163-2.838T12 8q-1.675 0-2.838 1.163T8 12q0 1.675 1.163 2.838T12 16Zm0-4Z" /></svg>
                     Solarium
                 </a>
 
                 <a href="#mode" class="group text-xl flex items-center gap-1 text-white hover:text-red1 transition-colors duration-300">
-            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 128 128">
-                <path fill="#1565C0" d="M89.71 68.54c-5.89-13.16-11.59-21.56-11.59-21.56v-.01H46.05c-1.91 3.74-5.11 9.81-9.71 18.28c-5.59 10.3-18.23 43.45-18.23 43.45s.74 4.38 11.5 6.35c7.14 1.31 9.29.19 15.26 3.43c5.27 2.86 8.92 5.53 17.85 5.53s11.18-2.21 18.45-5.53c6.19-2.83 9.53-1.45 16.64-2.91c15.07-3.09 16.06-14.11 16.06-14.11s-11.52-4.69-24.16-32.92z"/><path fill="#1565C0" d="M82.54 6.8c.02-.81-.51-1.53-1.28-1.75l-3.46-.98c-1.02-.29-2.05.37-2.22 1.42l-1.71 10.55s-5.3.91-11.17 5.69l-.39-.01c-5.87-4.78-11.29-5.68-11.29-5.68L49.3 5.48a1.773 1.773 0 0 0-2.22-1.42l-3.46.98c-.78.22-1.31.94-1.28 1.75c.09 3.23.4 11.68 1.33 20.24c.95 8.76 3 17.7 2.72 20.85c0 0 8.04 1.1 15.81 1.18v.01h.52v-.01c7.76-.07 15.81-1.18 15.81-1.18c-.28-3.15 1.77-12.09 2.72-20.85c.89-8.56 1.2-17 1.29-20.23z"/><linearGradient id="notoDress0" x1="37.617" x2="86.158" y1="46.75" y2="46.75" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#03A9F4"/><stop offset=".061" stop-color="#20B4F7"/><stop offset=".147" stop-color="#42C1FA"/><stop offset=".235" stop-color="#5DCBFC"/><stop offset=".323" stop-color="#71D2FE"/><stop offset=".414" stop-color="#7CD7FF"/><stop offset=".509" stop-color="#80D8FF"/><stop offset=".609" stop-color="#7DD7FF"/><stop offset=".696" stop-color="#72D3FE"/><stop offset=".777" stop-color="#60CCFC"/><stop offset=".856" stop-color="#47C3FA"/><stop offset=".931" stop-color="#27B7F7"/><stop offset="1" stop-color="#03A9F4"/></linearGradient><path fill="url(#notoDress0)" d="M63.2 50.16c-9.1 0-15.33-.74-17.45-.98a.779.779 0 0 1-.68-.87l.6-4.28a.77.77 0 0 1 .85-.67c2.03.22 8.09.79 16.68.79c8.26 0 13.23-.53 15-.75c.41-.05.79.23.86.64l.46 4.25c.07.43-.22.84-.66.9c-1.89.24-6.78.97-15.66.97z"/><path fill="#0D47A1" d="M73.82 16.09c-.84-.13-3.23.81-3.85 1.05c-2.73 1.05-4.99 2.5-7.16 4.45c-.01.01-.14.09-.3.09c-.16 0-.27-.09-.28-.1c-2.17-1.95-4.45-3.38-7.18-4.43c-.63-.24-3.02-1.18-3.85-1.05c-1 .15.21 1.26 2.02 2.84c1.82 1.58 4.39 3.8 6.57 5.76c.75.67 1.75.97 2.72 1.05c.97-.08 1.97-.38 2.72-1.05c2.18-1.96 4.75-4.18 6.57-5.76s3.02-2.7 2.02-2.85z"/><linearGradient id="notoDress1" x1="44.427" x2="51.535" y1="117.96" y2="64.944" gradientUnits="userSpaceOnUse"><stop offset=".297" stop-color="#0D47A1"/><stop offset="1" stop-color="#0D47A1" stop-opacity=".2"/></linearGradient><path fill="url(#notoDress1)" d="M39.6 116.06c3.73-28.23 13.54-52.85 13.54-52.85s-3.28 29.02-4.01 57.59c0 0-2.85-1.8-5.46-2.95c-2.61-1.15-4.07-1.79-4.07-1.79z"/><linearGradient id="notoDress2" x1="82.779" x2="76.996" y1="120.125" y2="77.91" gradientUnits="userSpaceOnUse"><stop offset=".297" stop-color="#0D47A1"/><stop offset="1" stop-color="#0D47A1" stop-opacity=".2"/></linearGradient><path fill="url(#notoDress2)" d="M77.45 120.26c-2.45-15.11-3.92-30.15-3.21-42.35c0 0 5.55 22.99 13.52 38.73c0 0-2.71.39-5.3 1.29c-1.81.63-5.01 2.33-5.01 2.33z"/></svg>
                     Mode
                 </a>
 
-                <a href="#boutique" class="group text-xl flex items-center gap-1 text-white hover:text-red1 transition-colors duration-300">
-                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
-                        <path fill="#f9f8f5" d="M220.61 60.16A6 6 0 0 0 216 58H53l-5.17-28.5A14 14 0 0 0 34.05 18H16a6 6 0 0 0 0 12h18a2 2 0 0 1 2 1.64l25.51 140.3a21.93 21.93 0 0 0 6.24 11.77a26 26 0 1 0 38.14 6.29h52.22A26 26 0 1 0 180 178H83.17a10 10 0 0 1-9.84-8.21L69.73 150H188.1a22 22 0 0 0 21.65-18.06l12.15-66.87a6 6 0 0 0-1.29-4.91ZM98 204a14 14 0 1 1-14-14a14 14 0 0 1 14 14Zm96 0a14 14 0 1 1-14-14a14 14 0 0 1 14 14Zm3.94-74.21a10 10 0 0 1-9.84 8.21H67.55L55.19 70h153.62Z"/></svg>
+                <a href="#" class="group text-xl flex items-center gap-1 text-white hover:text-red1 transition-colors duration-300">
                     Boutique
                 </a>
 
@@ -123,8 +116,6 @@
             <div id="menu" class="flex-col flex hidden  justify-center gap-4 p-4 items-center">
                 @if(Request::route()->getName() !== 'sqf.CGU') {{-- Vérifie si la route n'est pas CGU --}}
                 <a href="#uv" class="group flex items-center  text-white hover:text-red1 transition-colors duration-300">
-                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M11 4V1h2v3h-2Zm0 19v-3h2v3h-2Zm9-10v-2h3v2h-3ZM1 13v-2h3v2H1Zm17.7-6.3l-1.4-1.4l1.75-1.8l1.45 1.45l-1.8 1.75ZM4.95 20.5L3.5 19.05l1.8-1.75l1.4 1.4l-1.75 1.8Zm14.1 0l-1.75-1.8l1.4-1.4l1.8 1.75l-1.45 1.45ZM5.3 6.7L3.5 4.95L4.95 3.5L6.7 5.3L5.3 6.7ZM12 18q-2.5 0-4.25-1.75T6 12q0-2.5 1.75-4.25T12 6q2.5 0 4.25 1.75T18 12q0 2.5-1.75 4.25T12 18Zm0-2q1.675 0 2.838-1.163T16 12q0-1.675-1.163-2.838T12 8q-1.675 0-2.838 1.163T8 12q0 1.675 1.163 2.838T12 16Zm0-4Z" /></svg>
                     Solarium
                 </a>
 

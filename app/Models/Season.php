@@ -10,9 +10,5 @@ class Season extends Model
     use HasFactory;
     protected $fillable =  ['nom', 'date_début', 'date_fin'];
 
-    public function schedule()
-{
-    return $this->hasMany(Schedule::class, 'season_id');
-    // Cette relation indique que chaque saison peut avoir plusieurs horaires associés.
-}
+  
 }

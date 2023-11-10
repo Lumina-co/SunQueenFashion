@@ -1,20 +1,20 @@
 <x-app-layout>
 
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            modifier un horaire
+        <h2 class=" bg-gray-800 p-4 text-3xl w-3/4 font-bold text-white rounded-xl leading-tight text-center">
+            Modifier un horaire
         </h2>
-        <a href="{{ route('schedule.index') }}" class="bg-red-400 rounded-xl py-2 px-3">Retour aux horaires</a>
+        <a href="{{ route('schedule.index') }}" class="bg-gray-400 rounded-xl py-2 px-3">Retour aux horaires</a>
     </x-slot>
 
-{{-- formulaire edite --}}
+    {{-- formulaire edite --}}
     <div class="flex justify-center  relative overflow-x-auto m-12 max-w-xl mx-auto px-8">
-        <form class="flex flex-col text-sm text-gray-500 uppercase  bg-gray-100 rounded shadow-lg p-8 mt-8 dark:bg-gray-700 dark:text-gray-400" action='{{ route('schedule.update', $schedule)}}' method="post">
-            {{-- method post pour stoker --}}
+        <form class="flex flex-col text-sm my-16 w-full items-center  text-gray-500 uppercase  bg-gray-200 rounded  p-8 mt-8 dark:bg-gray-700 dark:text-gray-400" action='{{ route('schedule.update', $schedule)}}' method="post">
+            {{-- method post pour stocker --}}
             @csrf
-{{-- Les directives @csrf et @method('PUT') sont des directives Blade spécifiques à Laravel.
-@csrf génère un champ de protection contre les attaques CSRF (Cross-Site Request Forgery) pour sécuriser le formulaire,
- et @method('PUT') spécifie que la méthode HTTP utilisée pour la requête est PUT --}}
+            {{-- Les directives @csrf et @method('PUT') sont des directives Blade spécifiques à Laravel.
+             @csrf génère un champ de protection contre les attaques CSRF (Cross-Site Request Forgery) pour sécuriser le formulaire,
+             et @method('PUT') spécifie que la méthode HTTP utilisée pour la requête est PUT --}}
             @method('PUT')
             {{-- PUT: modifie --}}
             <div class="py-4">

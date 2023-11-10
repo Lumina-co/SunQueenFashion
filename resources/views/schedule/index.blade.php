@@ -1,11 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
 <div class="flex-col items-center">
-        <h2 class=" bg-gray-800 p-4 text-3xl w-3/4 font-bold text-white rounded-xl leading-tight text-center">
+        <h2 class=" bg-gray-800 font-poppins p-4 text-3xl w-3/4 font-bold text-white rounded-xl leading-tight text-center">
              Horaires
         </h2>
 
-        <a href="{{ route('schedule.create') }}" class="border bg-red-400 m-8 text-black-400 rounded-2xl shadow-lg py-2 px-3">Ajouter un nouvel horaire</a>
+        <a href="{{ route('schedule.create') }}" class="border bg-gray-400 m-8 font-bold  hover:bg-gray-500 text-black-400 rounded-2xl shadow-lg py-2 px-3">Ajouter un nouvel horaire</a>
     </x-slot>
     <div class="flex justify-center  ">
         <div class=" w-full  ">
@@ -14,10 +14,10 @@
                 {{-- formulaire de filtrage de saison --}}
 
                 <form action="{{ route('schedule.index') }}" method="GET">
-                     {{-- method get pour afficher  --}}
+                     {{-- method get pour récupérer  --}}
                     <label class="m-16  text-xl" for="season">Saison :</label>
                     <select name="season" id="season">
-                        
+
                         {{-- menu déroulant --}}
                         <option value="">Toutes les saisons</option>
                         @foreach ($seasons as $season)
@@ -25,10 +25,10 @@
                         @endforeach
                         {{--  vérifie si l'ID de la saison en cours ($season->id) correspond à la saison sélectionnée ($selectedSeason) pré-sélection de la saison --}}
                     </select>
-                    <button type="submit" class="bg-white p-2 m-4 rounded-xl">Filtrer</button>
+                    <button type="submit" class="bg-gray-200  p-2 px-6 m-8 hover:bg-gray-300 rounded-xl">Filtrer</button>
                 </form>
             </div>
-            {{-- tableau + nom des colonnes --}}
+            {{-- tableau nom des colonnes --}}
             <div class=" mt-12   px-8 pb-12 ">
                 <table class="w-full  text-md text-left text-black ">
                     <thead class="text-md bg bg-gray-300 border-2">

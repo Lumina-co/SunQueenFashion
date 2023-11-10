@@ -12,7 +12,7 @@ class SeasonController extends Controller
      */
     public function index()
     {
-        $seasons = season::all();// dans la variable theme ce trouve les resultats de ma requete
+        $seasons = Season::all();// dans la variable theme ce trouve les resultats de ma requete
 
         return view('season.index', compact('seasons'));
     }
