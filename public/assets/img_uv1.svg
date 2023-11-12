@@ -1,6 +1,6 @@
 <svg width="162" height="239" viewBox="0 0 162 239" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g filter="url(#filter0_d_101_225)">
-<rect x="4" y="4" width="153.66" height="230.49" fill="url(#pattern0)" shape-rendering="crispEdges"/>
+<rect x="4" y="4" width="153.66" height="230.49" rx="4" fill="url(#pattern0)" shape-rendering="crispEdges"/>
 </g>
 <defs>
 <filter id="filter0_d_101_225" x="0" y="0" width="161.66" height="238.49" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">

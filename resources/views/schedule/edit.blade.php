@@ -10,13 +10,10 @@
     {{-- formulaire edite --}}
     <div class="flex justify-center  relative overflow-x-auto m-12 max-w-xl mx-auto px-8">
         <form class="flex flex-col text-sm my-16 w-full items-center  text-gray-500 uppercase  bg-gray-200 rounded  p-8 mt-8 dark:bg-gray-700 dark:text-gray-400" action='{{ route('schedule.update', $schedule)}}' method="post">
-            {{-- method post pour stocker --}}
+            {{-- method post pour respecter la spécification HTML des formulaires --}}
             @csrf
-            {{-- Les directives @csrf et @method('PUT') sont des directives Blade spécifiques à Laravel.
-             @csrf génère un champ de protection contre les attaques CSRF (Cross-Site Request Forgery) pour sécuriser le formulaire,
-             et @method('PUT') spécifie que la méthode HTTP utilisée pour la requête est PUT --}}
             @method('PUT')
-            {{-- PUT: modifie --}}
+            {{-- pour indiquer à Laravel que la vraie méthode HTTP à utiliser est PUT, même si HTML ne supporte que POST et GET. --}}
             <div class="py-4">
                 <label class="font-semibold text-gray-500" for="day">jour</label>
                 <input class="flex items-center h-8 px-4 w-48 bg-gray-50 mt-2 rounded focus:outline-none focus:ring-2" type="text" id="day" name="day" value="{{ $schedule->day}}">

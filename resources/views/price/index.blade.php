@@ -5,7 +5,7 @@
                 TARIFS
             </h2>
         </div>
-        <a href="{{ route('price.create') }}" class="border bg-red-400 hover:bg-red-500 font-bold rounded-2xl shadow-lg py-2 px-3">Ajouter un tarif</a>
+        <a href="{{ route('price.create') }}" class="border bg-gray-400 hover:bg-gray-500 font-bold rounded-2xl shadow-lg py-2 px-3">Ajouter un tarif</a>
     </x-slot>
     <div class="flex my-12 justify-center items-center ">
 

@@ -5,7 +5,7 @@
                 FERMETURE
             </h2>
         </div>
-        <a href="{{ route('holidays.create') }}" class="border bg-red-400 text-black-400 hover:bg-red-500  font-bold rounded-2xl shadow-lg py-2 px-3">Ajouter des fermetures</a>
+        <a href="{{ route('holidays.create') }}" class="border bg-gray-400 text-black-400 hover:bg-gray-500  font-bold rounded-2xl shadow-lg py-2 px-3">Ajouter des fermetures</a>
     </x-slot>
     <div class="flex justify-center my-12 items-center ">
         {{-- tableau + nom des colonnes --}}

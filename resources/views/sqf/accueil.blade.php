@@ -4,7 +4,7 @@
         {{-- hero section --}}
         <div class="relative">
             <div class="bg-black1">
-                <img src="/assets/mode.png" alt="image_mode_accessoire" class="w-full lg:h-[500px] opacity-80">
+                <img src="/assets/mode.jpg" alt="image_mode_accessoire" class="w-full lg:h-[500px] opacity-80">
             </div>
             <div class="absolute inset-0 flex items-center justify-center">
                 <img src="/assets/logo.svg" alt="logo" class="w-3/4 h-1/2">
@@ -15,9 +15,9 @@
         <div class="flex justify-center relative lg:-mt-24 items-center  w-full ">
 
             {{-- holidays BDD --}}
-            <div class="bg-black1 rounded-b-2xl lg:rounded-2xl lg:w-2/4 w-full  text-white shadow-2xl ">
+            <div class="bg-black1 rounded-b-2xl m-4 lg:rounded-2xl lg:w-2/5 w-full  text-white shadow-2xl ">
                 @if($holiday != null)
-                <div class="flex w-full justify-center font-semibold md:rounded-t-xl lg:text-2xl lg:px-4  bg-red1 text-white">
+                <div class="flex w-full justify-center font-semibold md:rounded-t-xl lg:text-2xl lg:px-4 py-2  bg-red1 text-white">
                     <div class="">{{ $holiday->description}}</div>
                     <div class="mx-1">du {{ Carbon\Carbon::parse($holiday->date_début)->format('d/m/Y') }}</div>
                     <div class="">au {{ Carbon\Carbon::parse($holiday->date_fin)->format('d/m/Y') }} inclus</div>
@@ -31,12 +31,12 @@
                         @foreach ($schedules as $schedule)
                         <div class="flex justify-between flex-col sm:flex-row lg:text-2xl">
                             <div class="font-semibold  -ml-3 md:px-4 lg:px-4 "> {{ $schedule->day }}</div>
-                            <div class="flex gap-2">
+                            <div class="flex gap-4 px-4">
                                 {{-- si seulement opening_am et closing_pm # de nul --}}
                                 @if($schedule->opening_am != null && $schedule->closing_am === null && $schedule->opening_pm === null && $schedule->closing_pm != null)
-                                <div class="px-4">non stop de</div>
+                                <div class="">non stop de</div>
                                 <time datetime="">{{ Carbon\Carbon::parse($schedule->opening_am)->format('H:i') }}</time>
-                                <div>à</div>
+                                <div class="px-4">à</div>
                                 <time datetime="px-4">{{ Carbon\Carbon::parse($schedule->closing_pm)->format('H:i') }}</time>
 
                                 {{-- si tous nuls --}}
@@ -46,9 +46,9 @@
                                 {{-- sinon --}}
                                 @else
                                 @if($schedule->opening_am != null)
-                                <div class="flex gap-2">
+                                <div class="flex gap-2 px-6">
                                     <time datetime="">{{ Carbon\Carbon::parse($schedule->opening_am)->format('H:i') }}</time>
-                                    <div>-</div>
+                                    <div class="">-</div>
                                     <time datetime="">{{ Carbon\Carbon::parse($schedule->closing_am)->format('H:i') }}</time>
                                 </div>
                                 @endif
@@ -84,7 +84,7 @@
         {{-- choices section --}}
         <div class="flex flex-col lg:flex-row h-auto my-16">
             <div class="relative w-full lg:w-2/4  group overflow-hidden">
-                <img src="{{ asset('assets/bronzage2.svg') }}" alt="photo_uv" class="w-full object-cover h-60 lg:h-full flex justify-center items-center transition-all duration-500 transform scale-100 group-hover:scale-110">
+                <img src="{{ asset('assets/bronzage1.webp') }}" alt="photo_uv" class="w-full object-cover h-60 lg:h-full flex justify-center items-center transition-all duration-500 transform scale-100 group-hover:scale-110">
                 <div class="gap-8 absolute flex flex-col inset-x-0 bottom-0 justify-center lg:backdrop-blur-md bg-white/30">
                     <p class="mx-auto w-3/4 text-center pt-12 text-black1 transition-all duration-500 font-poppins font-bold text-lg lg:text-2xl flex">
                         Obtenez un éclat d'été toute l'année ! Découvrez nos séances UV.
@@ -98,7 +98,7 @@
                 </div>
             </div>
             <div class="relative w-full lg:w-2/4 group overflow-hidden">
-                <img src="{{ asset('assets/IMG_2176.jpg') }}" alt="photo_boutique" class="w-full object-cover h-60 lg:h-full flex justify-center items-center transition-all duration-500 transform scale-100 group-hover:scale-110">
+                <img src="{{ asset('assets/IMG_2176.webp') }}" alt="photo_boutique" class="w-full object-cover h-60 lg:h-full flex justify-center items-center transition-all duration-500 transform scale-100 group-hover:scale-110">
                 <div class=" gap-8 absolute flex flex-col inset-x-0 bottom-0 justify-center lg:backdrop-blur-md bg-white/30">
                     <p class="mx-auto w-3/4 text-center pt-12 text-black1 transition-all duration-500 font-poppins font-bold text-lg lg:text-2xl flex">
                         Découvrez notre sélection exclusive de mode et d'accessoires.
@@ -126,17 +126,17 @@
                 </div>
                 <div class="w-2/4">
                     <div class="">
-                        <img class=" w-full rounded-md" src="{{ asset('assets/img_planche.svg') }}" alt="photo_uv ">
+                        <img class=" w-full rounded-md shadow-xl blur-none " src="{{ asset('assets/img_planche.svg') }}" alt="photo_uv ">
                     </div>
                     <div class="absolute flex justify-between gap-8">
                         <div class="-translate-x-28 -translate-y-56">
-                            <img class="w-64 rounded-md" src="{{ asset('assets/img_uv1.svg') }}" alt="photo_bronzage ">
+                            <img class="w-64 " src="{{ asset('assets/img_uv1.svg') }}" alt="photo_bronzage ">
                         </div>
                         <div class="-translate-x-36 -translate-y-28">
-                            <img class="w-64 rounded-md" src="{{ asset('assets/img_uv2.svg') }}" alt="photo_uv">
+                            <img class="w-64  translate-x-2 " src="{{ asset('assets/img_uv2.svg') }}" alt="photo_uv">
                         </div>
-                        <div class="-translate-x-40 -translate-y-6">
-                            <img class="w-64 rounded-md " src="{{ asset('assets/img_uv3.svg') }}" alt="image_uv">
+                        <div class="-translate-x-40 -translate-y-10 ">
+                            <img class="w-64  translate-x-1" src="{{ asset('assets/img_uv3.svg') }}" alt="image_uv">
                         </div>
                     </div>
                 </div>
@@ -165,7 +165,7 @@
                 <div class="lg:w-4/5 mx-8 lg:pl-16">
                     <h2 class="lg:text-6xl text-4xl font-bold lg:mt-20 lg:mb-16 my-8 md:text-center mt-16  lg:-m-16 lg:text-left">NOS MACHINES</h2>
                     <div class="lg:flex flex-col lg:flex-row gap-24 w-full">
-                        <img src="{{ asset('assets/img_uv4.svg') }}" alt="bronzage_soleil" class=" my-8 mx-auto lg:w-full lg:mx-0 shadow-xl rounded-md lg:mb-0">
+                        <img src="{{ asset('assets/img_uv4.webp') }}" alt="bronzage_soleil" class=" my-8 mx-auto lg:w-full lg:mx-0 shadow-xl rounded-md lg:mb-0">
                         <div class="lg:w-full lg:pl-8">
                             <div class="lg:text-5xl text-3xl md:text-4xl  font-parisienne font-black lg:mt-36 mt-20 mb-4">Notre cabine MégaSun</div>
                             <p class="lg:text-2xl text-lg leading-8">La forte booster de collagène offre une expérience de bronzage incomparable, avec des options de confort telles que la climatisation, l'aromathérapie pour une détente totale, et la diffusion d'odeurs pour une expérience sensorielle unique. De plus, notre système Acqua jet vaporise des jets de brume rafraîchissante pour vous rafraîchir pendant la séance.</p>
@@ -180,7 +180,7 @@
                             </p>
                         </div>
 
-                        <img src="{{ asset('assets/img_uv5.svg') }}" alt="image_bronzage" class="lg:w-3/4 rounded-md my-12 mx-auto lg:mx-0 mb-6 lg:mb-0">
+                        <img src="{{ asset('assets/img_uv5.webp') }}" alt="image_bronzage" class="lg:w-3/4 rounded-md my-12 mx-auto lg:mx-0 mb-6 lg:mb-0">
                     </div>
                 </div>
             </div>
@@ -195,7 +195,7 @@
 
             {{-- Prices BDD --}}
             <div class="flex justify-center items-center ">
-                <div class=" bg-black1 rounded-2xl text-white lg:w-2/6 my-12 p-8 shadow-2xl ">
+                <div class=" bg-black1 rounded-2xl text-white lg:w-2/4 p-8 shadow-2xl ">
                     <h2 class="text-center text-2xl  border-b-2 mb-4 leading-10  border-white">TARIFS</h2>
                     @foreach ($prices as $price)
                     <div class="flex justify-center items-center">
@@ -217,21 +217,21 @@
             <div class="text-xl md:text-2xl mt-4 lg:text-3xl lg:w-2/4 w-3/4 m-auto font-bold ">Découvrez dès maintenant notre sélection tendance de nouveaux arrivages</div>
         </div>
 
-        <div class="flex flex-col md:flex-row justify-center items-center gap-12 ">
-            <div class="flex justify-center">
-                <img src="{{ asset('assets/section_mode1.jpg') }}" alt="article_produit" class="w-48 rounded-lg shadow-md  brightness-125 saturate-150 contrast-75 md:w-48 lg:w-64 transform hover:scale-110 duration-300 transition-transform">
+        <div class="flex flex-col md:flex-row justify-center  items-center gap-12 ">
+            <div class="flex justify-center py-8">
+                <img src="{{ asset('assets/section-mode1.webp') }}" alt="article_produit" class="w-48 rotate-90 rounded-lg shadow-md  brightness-125 saturate-150 contrast-75 md:w-48 lg:w-80 transform hover:scale-110 duration-300 transition-transform">
             </div>
 
-            <div class="flex justify-center">
-                <img src="{{ asset('assets/section_mode2.jpg') }}" alt="article_produit" class="w-48 md:w-48 lg:w-64 transform hover:scale-110 rounded-lg shadow-md  brightness-125 saturate-150 contrast-75 duration-300 transition-transform">
+            <div class="flex justify-center py-8">
+                <img src="{{ asset('assets/section-mode2.webp') }}" alt="article_produit" class="w-48 rotate-90 md:w-48 lg:w-80 transform hover:scale-110 rounded-lg shadow-md  brightness-125 saturate-150 contrast-75 duration-300 transition-transform">
             </div>
 
-            <div class="flex justify-center">
-                <img src="{{ asset('assets/section_mode3.jpg') }}" alt="image_mode" class="w-48 md:w-48 lg:w-64 rounded-lg shadow-md  brightness-125 saturate-150 contrast-75 transform hover:scale-110 duration-300 transition-transform">
+            <div class="flex justify-center py-8">
+                <img src="{{ asset('assets/section-mode3.webp') }}" alt="image_mode" class="w-48 rotate-90 md:w-48 lg:w-80 rounded-lg shadow-md  brightness-125 saturate-150 contrast-75 transform hover:scale-110 duration-300 transition-transform">
             </div>
         </div>
 
-        <div class="flex flex-col items-center justify-center  px-4">
+        <div class="flex flex-col items-center justify-center  p-6">
             <p class="text-lg md:text-xl lg:text-2xl lg:w-2/4 lg:leading-8 mx-6 my-16">
                 Que vous cherchiez à ajouter une touche de glamour à votre look quotidien, à préparer votre peau pour l'été, ou simplement à explorer un style qui vous ressemble, Sun Queen Fashion est là pour vous guider. Parcourez notre boutique en ligne et laissez-vous emporter par la magie des paillettes, de la mode et de la confiance en vous.
             </p>
@@ -298,8 +298,7 @@
 
             <!-- Map -->
             <div id="map" class="w-3/4 mx-auto gap-8 mt-8 h-80 md:h-96 lg:h-128  "></div>
-            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-             integrity="sha256-vF5wZ4u0zH1uu5RdUb7BSizIhm4kOGz1COlD1l+MBAo=" crossorigin="">
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-vF5wZ4u0zH1uu5RdUb7BSizIhm4kOGz1COlD1l+MBAo=" crossorigin="">
             </script>
             <script>
                 var map = L.map('map').setView([47.62249091867886, 6.156544022729926], 15); //coordonnées

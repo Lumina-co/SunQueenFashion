@@ -4,7 +4,7 @@
         <h2 class="text-3xl font-bold text-white rounded-xl w-3/4  bg-gray-800 p-4 leading-tight text-center">
             Modifier des saisons
         </h2>
-        <a href="{{ route('season.index') }}" class="bg-red-400 rounded-xl py-2 px-3">Retour aux saisons</a>
+        <a href="{{ route('season.index') }}" class="bg-gray-400 rounded-xl py-2 px-3">Retour aux saisons</a>
     </x-slot>
 {{-- L'attribut action du formulaire est défini avec la méthode route('season.update', $season),
  ce qui indique que lorsque le formulaire est soumis,

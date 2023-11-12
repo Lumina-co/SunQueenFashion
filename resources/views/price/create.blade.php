@@ -4,7 +4,7 @@
         <h2 class=" text-3xl font-bold w-3/4 rounded-xl bg-gray-800 p-4 text-white leading-tight text-center">
             Ajouter un tarif
         </h2>
-        <a href="{{ route('price.index') }}" class="bg-red bg-red-400 rounded-xl py-2 px-3">Retour
+        <a href="{{ route('price.index') }}" class="bg-red bg-gray-400 rounded-xl py-2 px-3">Retour
             aux tarifs</a>
     </x-slot>
 

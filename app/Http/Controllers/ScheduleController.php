@@ -98,6 +98,15 @@ class ScheduleController extends Controller
 
         return redirect()->route('schedule.index');
     }
+   /* INSERT INTO schedules (day, opening_am, closing_am, opening_pm, closing_pm, season_id)
+    VALUES (
+        * 'valeur_de_request_day',
+        * 'valeur_de_request_opening_am',
+        * 'valeur_de_request_closing_am',
+        *'valeur_de_request_opening_pm',
+        *'valeur_de_request_closing_pm',
+        *'valeur_de_request_season_id'
+    );*/
 
     /**
      * Display the specified resource.
@@ -119,11 +128,11 @@ class ScheduleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Schedule $schedule)
-      //  Cette méthode accepte deux paramètres : $request (qui contient les données soumises
+    public function update(Request $request, Schedule $schedule) {
+      //  Cette méthode accepte deux paramètres : $requestcontient les données soumises
             //par le formulaire) et $schedule (qui est un objet de modèle schedule représentant
             //  l'enregistrement dans la base de données que l'on souhaite mettre à jour).
-    {
+
         // Valide les données entrées par l'utilisateur
         $request->validate([
             'day' => 'required',
@@ -147,6 +156,18 @@ class ScheduleController extends Controller
         return redirect()->route('schedule.index');
     }
 
+   /* UPDATE schedules
+    *SET
+       * day = 'valeur_de_request_day',
+       * opening_am = 'valeur_de_request_opening_am',
+       * closing_am = 'valeur_de_request_closing_am',
+       * opening_pm = 'valeur_de_request_opening_pm',
+       * closing_pm = 'valeur_de_request_closing_pm';
+    */
+
+
+
+
 
 
     /**
@@ -159,3 +180,6 @@ class ScheduleController extends Controller
         return redirect()->route('schedule.index');
     }
 }
+/*DELETE FROM schedules
+WHERE id = 'valeur_de_schedule_id';
+*/

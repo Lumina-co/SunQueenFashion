@@ -4,7 +4,7 @@
         <h2 class=" text-3xl font-bold rounded-xl w-3/4 bg-gray-800 p-4 text-white leading-tight text-center">
             Modifier des fermetures
         </h2>
-        <a href="{{ route('holidays.index') }}" class="bg-red-400 rounded-md py-2 px-3">Retour aux fermetures</a>
+        <a href="{{ route('holidays.index') }}" class="bg-gray-400 rounded-md py-2 px-3">Retour aux fermetures</a>
     </x-slot>
 {{-- L'attribut action du formulaire est défini avec la méthode route('holiday.update', $holiday),
  ce qui indique que lorsque le formulaire est soumis,

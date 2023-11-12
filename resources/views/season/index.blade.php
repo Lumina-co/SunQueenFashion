@@ -6,7 +6,7 @@
             </h2>
         </div>
 
-        <a href="{{ route('season.create') }}" class="border bg-red-400 hover:bg-red-500 font-bold text-black-400 rounded-2xl  shadow-lg py-2 px-3">Ajouter des dates</a>
+        <a href="{{ route('season.create') }}" class="border bg-gray-400 hover:bg-gray-500 font-bold text-black-400 rounded-2xl  shadow-lg py-2 px-3">Ajouter des dates</a>
     </x-slot>
     <div class="flex justify-center my-12 items-center ">
             {{-- tableau + nom des colonnes --}}
