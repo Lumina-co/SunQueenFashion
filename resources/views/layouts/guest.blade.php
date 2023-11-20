@@ -29,13 +29,13 @@
             <div class="ml-8">
                 <x-application-logo />
             </div>
-            @if(Request::route()->getName() !== 'sqf.CGU') {{-- Vérifie si la route n'est pas CGU --}}
+            @if(Request::route()->getName() !== 'sqf.CGU' && Request::route()->getName() !== 'sqf.mentions') {{-- Vérifie si la route n'est pas CGU --}}
             <div class="flex items-center space-x-20">
-                <a href="#uv" class="group text-xl flex items-center gap-1 text-white hover:text-red1 transition-colors duration-300">
+                <a href="#uv" class="group text-2xl flex items-center gap-1 text-white hover:text-red1 transition-colors duration-300">
                     Solarium
                 </a>
 
-                <a href="#mode" class="group text-xl flex items-center gap-1 text-white hover:text-red1 transition-colors duration-300">
+                <a href="#mode" class="group text-2xl flex items-center gap-1 text-white hover:text-red1 transition-colors duration-300">
                     Mode
                 </a>
 
@@ -251,6 +251,11 @@
             <a href="{{ route('sqf.CGU') }}" class="text-white hover:text-red1 transition-colors duration-300">
                 CGU
             </a>
+
+            <div class="flex justify-center  my-4 lg:flex-row text-xl lg:gap-36 items-center">
+                <a href="{{ route('sqf.mentions') }}" class="text-white hover:text-red1 transition-colors duration-300">
+                    Mentions générales
+                </a>
 
 
         </div>

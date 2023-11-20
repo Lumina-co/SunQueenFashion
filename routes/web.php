@@ -36,4 +36,5 @@ Route::middleware([
 Route::get('/', [FrontController::class, 'index'])->name('sqf.accueil');
 
 Route::get('/CGU', [FrontController::class, 'conditions'])->name('sqf.CGU');
+Route::get('/mentions', [FrontController::class, 'mentions'])->name('sqf.mentions');
 

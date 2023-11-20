@@ -41,4 +41,9 @@ class FrontController extends Controller
     {
         return view('sqf.CGU');
     }
+
+    public function mentions()// appel la vue
+    {
+        return view('sqf.mentions');
+    }
 }
