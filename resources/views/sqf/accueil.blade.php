@@ -18,9 +18,9 @@
             <div class="bg-black1 rounded-b-2xl m-4 lg:rounded-2xl lg:w-2/5 w-full  text-white shadow-2xl ">
                 @if($holiday != null)
                 <div class="flex w-full justify-center font-semibold md:rounded-t-xl lg:text-2xl lg:px-4 py-2  bg-red1 text-white">
-                    <div class="">{{ $holiday->description}}</div>
-                    <div class="mx-1">du {{ Carbon\Carbon::parse($holiday->date_début)->format('d/m/Y') }}</div>
-                    <div class="">au {{ Carbon\Carbon::parse($holiday->date_fin)->format('d/m/Y') }} inclus</div>
+                    <div class="text-center">{{ $holiday->description}} du {{ Carbon\Carbon::parse($holiday->date_début)->format('d/m/Y') }} au {{ Carbon\Carbon::parse($holiday->date_fin)->format('d/m/Y') }} inclus</div>
+                    <div class="mx-1"></div>
+                    <div class=""></div>
                 </div>
                 @endif
 

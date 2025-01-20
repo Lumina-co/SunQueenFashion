@@ -14,43 +14,31 @@ class ScheduleController extends Controller
      */
     public function index()
     {
+        // Récupérer toutes les saisons
+        $seasons = Season::all();
 
-        $seasons = Season::all(); // requête Eloquent qui récupère toute la table des saisons
-        $selectedSeason = request()->input('season'); // Récupérez la saison sélectionnée par l'utilisateur depuis l'input
+        // Récupérer la saison sélectionnée par l'utilisateur depuis l'input
+        $selectedSeason = request()->input('season');
 
-
-
-        //vérifie d'abord  si l'utilisateur n'a pas choisi de saison,alors récupère la saison actuelle
+        // Si aucune saison n'est sélectionnée, chercher la saison actuelle
         if ($selectedSeason === null) {
-            $selectedSeason = Season::where('date_début', '<=', now())
+            $currentSeason = Season::where('date_début', '<=', now())
                 ->where('date_fin', '>=', now())
-                ->first()->id;
+                ->first();
+
+            // Vérifiez si une saison actuelle existe
+            if ($currentSeason) {
+                $selectedSeason = $currentSeason->id;
+            } else {
+                $selectedSeason = null; // Aucune saison trouvée
+            }
         }
 
-        /**
-          * récupère tous les horaires associés à la saison sélectionnée (soit celle choisie par l'utilisateur,
-          * soit la saison actuelle si aucune sélection n'a été faite).
-        */
-        $schedules = Schedule::where('season_id', $selectedSeason)->get();
-
-        //................requête SQL....................................
-        /**
-         *  -- Sélectionnez toutes les saisons depuis la table des saisons
-        *SELECT * FROM seasons;
-
-         *   -- Récupérez l'ID de la saison sélectionnée depuis la requête (par exemple, 'selectedSeasonID')
-         *  SET @selectedSeasonID = ...; -- Remplacez ceci par la valeur réelle récupérée depuis la requête
-
-         * -- Si une saison est sélectionnée
-         *IF @selectedSeasonID IS NOT NULL THEN
-         *   -- Sélectionnez tous les horaires correspondant à l'ID de la saison sélectionnée
-         *  SELECT * FROM schedules WHERE season_id = @selectedSeasonID;
-         *  ELSE
-         *  -- Si aucune saison n'est sélectionnée, affichez tous les horaires
-         * SELECT * FROM schedules;
-         *END IF;
-         */
-
+        // Récupérer les horaires associés à la saison sélectionnée
+        $schedules = collect(); // Collection vide par défaut
+        if ($selectedSeason !== null) {
+            $schedules = Schedule::where('season_id', $selectedSeason)->get();
+        }
 
         return view('schedule.index', compact('schedules', 'seasons', 'selectedSeason'));
     }
